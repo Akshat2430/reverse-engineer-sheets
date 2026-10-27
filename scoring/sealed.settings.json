@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED/**)",
+      "Read(~/.claude/projects/**)",
+      "Read(~/.claude/plans/**)",
+      "Read(~/.claude/file-history/**)",
+      "Read(~/.claude/todos/**)",
+      "Read(~/.claude/history.jsonl)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "filesystem": {
+      "denyRead": [
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED",
+        "~/.claude/projects",
+        "~/.claude/plans",
+        "~/.claude/file-history",
+        "~/.claude/todos",
+        "~/.claude/history.jsonl"
+      ]
+    }
+  }
+}
