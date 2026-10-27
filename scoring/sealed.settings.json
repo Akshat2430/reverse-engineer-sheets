@@ -7,7 +7,17 @@
       "Read(~/.claude/plans/**)",
       "Read(~/.claude/file-history/**)",
       "Read(~/.claude/todos/**)",
-      "Read(~/.claude/history.jsonl)"
+      "Read(~/.claude/history.jsonl)",
+      "Read(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.git/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/sheetre/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/tests/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.claude/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/samples/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/scoring/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.venv/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/docs/**)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/requirements.txt)",
+      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/pytest.ini)"
     ]
   },
   "sandbox": {
@@ -20,7 +30,25 @@
         "~/.claude/plans",
         "~/.claude/file-history",
         "~/.claude/todos",
-        "~/.claude/history.jsonl"
+        "~/.claude/history.jsonl",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.git"
+      ],
+      "denyWrite": [
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/sheetre",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/tests",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.claude",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/samples",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/scoring",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.venv",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/docs",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/requirements.txt",
+        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/pytest.ini"
+      ]
+    },
+    "network": {
+      "allowUnixSockets": [
+        "/tmp/sheetre-bridge.sock",
+        "/private/tmp/sheetre-bridge.sock"
       ]
     }
   }

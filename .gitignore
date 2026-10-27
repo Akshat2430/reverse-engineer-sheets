@@ -5,3 +5,5 @@ runs/*
 !runs/demo/
 .DS_Store
 ~$*
+scoring/transcripts/
+__pycache__/

@@ -99,7 +99,7 @@ Not installing: `xlwings-macos-utils` 0.1.0, a single-author package. I'll read 
 - xlwings uses pywin32/COM instead of appscript. There's no "Grant Access" sandbox dialog.
 - VBA can be inserted programmatically ("Trust access to the VBA project object model"), so no manual import step.
 - Claude Code sandbox unavailable natively (see residual risks).
-- Path separators and `runs/<ts>/work/` path length (MAX_PATH with long workbook names like `Sales_Commission_Calc_FINAL_v3 (USE THIS).xlsm`).
+- Path separators and `runs/<ts>/work/` path length (MAX_PATH with long workbook names).
 - LibreOffice binary is `soffice.exe` under Program Files, not on PATH.
 - DATEVALUE locale: the Windows regional setting changes how text dates parse.
 
@@ -114,6 +114,16 @@ These are general Excel and automation facts, not specific traps. The engine, in
 1. **Excel ignores Apple Events while any modal dialog is open** (a VBA error, the VBE, Save As). xlwings calls then time out after 60s (`OSERROR -1712`), or block for much longer. `sheetre.engine` needs a watchdog that fails loudly with "Excel is showing a dialog" instead of hanging.
 2. **A VBA compile error stops every macro in the module.** Example: a variable named after a built-in such as `CDate` (`Dim cDate As Long`) gives "Compile error: Syntax error". `run_macro` must report this distinctly from a runtime error. Reading VBA source statically with `olevba` still works.
 3. **openpyxl drops `x14:dataValidation`.** Excel re-saves cross-sheet list validation into `extLst`, and openpyxl warns "Data Validation extension is not supported and will be removed" and hides it. Inventory must parse the sheet XML directly for both `<dataValidation>` and `<x14:dataValidation>`.
-4. **Locale matters.** This Mac is `en_IN`: `DATEVALUE("03/04/2027")` returns 3 April, while en-US returns 4 March. `"1,25,000"` doesn't coerce to a number at all, but `"64,500"` does. `#,##0` displays in lakh grouping. Report the engine's locale in every probe and proof run.
+4. **Locale matters.** This Mac is `en_IN`: `DATEVALUE("05/06/2028")` returns 5 June, while en-US returns 6 May. Indian grouping (`"1,23,456"`) doesn't coerce to a number at all, but `"12,345"` does. `#,##0` displays in lakh grouping. Report the engine's locale in every probe and proof run.
 5. **olevba `extract_macros()` returns `Attribute VB_…` lines,** which the VBA editor hides. Don't mistake them for code.
 6. **Build and work-copy filenames should be plain ASCII without parentheses** (precaution: macro references are quoted strings).
+7. **Claude Code's macOS sandbox lets Excel answer read-only Apple Events but rejects every state-changing one** (`-10004 privilege violation`; `hiservices-xpcservice` connection invalid), even with `allowAppleEvents`. Fix: `sheetre.bridge`, a small server started in a normal terminal that drives Excel outside the sandbox. The sandboxed engine reaches it over one allowed Unix socket (`/tmp/sheetre-bridge.sock`). It only opens workbooks under `runs/`, has no macro command and never executes code sent to it. The skill's `model.py` still runs inside the sandbox. `allowAppleEvents` is no longer needed, which closes that hole.
+8. **A skill under test will "fix" its own toolkit if it can.** The first control run edited `excelfn.py`, `cli.py`, `engine.py` and the tests. The edits were good, but a skill being scored must not change its tools. Fix: scoring settings make `sheetre/`, `tests/`, `.claude/`, `samples/`, `scoring/`, `docs/` and `.venv/` read-only (sandbox `denyWrite` plus `Edit` deny rules), and the skill logs tool problems to `RUN/toolkit_issues.md` instead.
+9. **Excel's ROUND rounds the 15-significant-digit value**, not the shortest-repr value. Found by the skill's rebuild cross-check, confirmed against Excel on 609 values near rounding midpoints. `excelfn.xl_round` now does this.
+10. **Calibrate "problem".** The first control run flagged 8 design suggestions (no validation, fixed team count, no source recorded) as problems on a workbook with nothing planted. `ledger-rules.md` now defines a problem as something that makes an output wrong or misleading as the workbook stands, and sends design notes and environment issues elsewhere.
+
+### Scoring launch procedure (Phase 3)
+
+1. In a normal terminal: `.venv/bin/python -m sheetre.bridge` (leave it running).
+2. Remove any earlier runs of the samples from `runs/`.
+3. Fresh session: `claude --settings scoring/sealed.settings.json`, then `/reverse-engineer samples/<file>`.
