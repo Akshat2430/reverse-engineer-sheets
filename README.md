@@ -12,7 +12,15 @@ You need Claude Code, Python 3.11 and Microsoft Excel (macOS or Windows). LibreO
    ```
    git clone https://github.com/Akshat2430/reverse-engineer-sheets.git
    cd reverse-engineer-sheets
+   ```
+   macOS or Linux:
+   ```
    python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt
+   ```
+   Windows:
+   ```
+   py -3.11 -m venv .venv
+   .venv\Scripts\pip install -r requirements.txt
    ```
 2. **Open Claude Code in the folder:** `claude`
 3. **Run it on your file:** `/reverse-engineer path/to/your_workbook.xlsx`
