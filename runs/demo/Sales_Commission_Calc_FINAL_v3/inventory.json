@@ -1,0 +1,915 @@
+{
+ "file": "runs/demo/Sales_Commission_Calc_FINAL_v3/work/Sales_Commission_Calc_FINAL_v3__USE_THIS_.xlsm",
+ "name": "Sales_Commission_Calc_FINAL_v3__USE_THIS_.xlsm",
+ "size": 45038,
+ "sha256": "aca650e2b6929925c1960362ec1c559e568d83c672f6c6a087335cfe40619e07",
+ "calc": {
+  "calcId": "191029"
+ },
+ "sheets": [
+  {
+   "name": "Inputs",
+   "state": "visible",
+   "dims": "A1:H61",
+   "max_row": 61,
+   "max_col": 8,
+   "formulas": 0,
+   "constants": 488,
+   "hidden_cols": [],
+   "hidden_rows": [],
+   "merged": [],
+   "freeze": "A2"
+  },
+  {
+   "name": "Rates",
+   "state": "visible",
+   "dims": "A1:K13",
+   "max_row": 13,
+   "max_col": 11,
+   "formulas": 0,
+   "constants": 78,
+   "hidden_cols": [],
+   "hidden_rows": [],
+   "merged": [],
+   "freeze": null
+  },
+  {
+   "name": "Calc",
+   "state": "visible",
+   "dims": "A1:S61",
+   "max_row": 61,
+   "max_col": 19,
+   "formulas": 1118,
+   "constants": 41,
+   "hidden_cols": [
+    "M"
+   ],
+   "hidden_rows": [],
+   "merged": [],
+   "freeze": "C2"
+  },
+  {
+   "name": "Summary",
+   "state": "visible",
+   "dims": "A1:E26",
+   "max_row": 26,
+   "max_col": 5,
+   "formulas": 43,
+   "constants": 42,
+   "hidden_cols": [],
+   "hidden_rows": [],
+   "merged": [
+    "B2:C2"
+   ],
+   "freeze": null
+  },
+  {
+   "name": "old_rates",
+   "state": "hidden",
+   "dims": "A1:B11",
+   "max_row": 11,
+   "max_col": 2,
+   "formulas": 0,
+   "constants": 21,
+   "hidden_cols": [],
+   "hidden_rows": [],
+   "merged": [],
+   "freeze": null
+  },
+  {
+   "name": "adj",
+   "state": "veryHidden",
+   "dims": "A1:B3",
+   "max_row": 3,
+   "max_col": 2,
+   "formulas": 0,
+   "constants": 6,
+   "hidden_cols": [],
+   "hidden_rows": [],
+   "merged": [],
+   "freeze": null
+  }
+ ],
+ "defined_names": [
+  {
+   "name": "_xlnm._FilterDatabase",
+   "refers_to": "Inputs!$A$1:$H$61",
+   "scope": "Inputs",
+   "hidden": true,
+   "broken": false
+  }
+ ],
+ "external_links": [],
+ "vba": {
+  "present": true,
+  "modules": [
+   {
+    "name": "modFormatting.bas",
+    "stream": "VBA/modFormatting",
+    "file": "vba/modFormatting.bas",
+    "procedures": [
+     "Sub FormatSummary",
+     "Sub ClearFilters"
+    ],
+    "writes": [],
+    "lines": 18
+   },
+   {
+    "name": "modAccelerator.bas",
+    "stream": "VBA/modAccelerator",
+    "file": "vba/modAccelerator.bas",
+    "procedures": [
+     "Sub ApplyAccelerator",
+     "Function HeaderCol"
+    ],
+    "writes": [
+     "ws.Cells(r, cFinal).Value = ws.Cells(r, cNet).Value * 1.15"
+    ],
+    "lines": 31
+   }
+  ],
+  "error": null
+ },
+ "flags": {
+  "comments": {
+   "count": 1,
+   "items": [
+    {
+     "cell": "Rates!B1",
+     "author": "Rahul Kapoor",
+     "text": "Cap at 15% total effective rate per CFO memo (Mar-25). Do not change without Finance sign-off."
+    }
+   ],
+   "truncated": false
+  },
+  "conditional_formats": {
+   "count": 0,
+   "items": [],
+   "truncated": false
+  },
+  "constants_in_formula_runs": {
+   "count": 1,
+   "items": [
+    {
+     "range": "Calc!S1:S61",
+     "majority": "=RC[-5]",
+     "constants": [
+      "S40",
+      "S41",
+      "S42",
+      "S43",
+      "S44",
+      "S45",
+      "S46",
+      "S47",
+      "S48",
+      "S49",
+      "S50",
+      "S51",
+      "S52",
+      "S53",
+      "S54",
+      "S55",
+      "S56",
+      "S57",
+      "S58",
+      "S59",
+      "S60",
+      "S61"
+     ],
+     "constant_count": 22
+    }
+   ],
+   "truncated": false
+  },
+  "data_validations": {
+   "count": 1,
+   "items": [
+    {
+     "sheet": "Summary",
+     "sqref": "B2",
+     "type": "list",
+     "formula1": "\"Q1,Q2,Q3,Q4\"",
+     "formula2": null,
+     "source": "sheet"
+    }
+   ],
+   "truncated": false
+  },
+  "error_masking": {
+   "count": 3,
+   "items": [
+    {
+     "formula": "=IFERROR(VLOOKUP(D2,Rates!$G$2:$H$6,2,FALSE),0)",
+     "pattern": "=IFERROR(VLOOKUP(RC[-6],Rates!R2C7:R6C8,2,FALSE),0)",
+     "cells": [
+      "Calc!J2",
+      "Calc!J3",
+      "Calc!J4",
+      "Calc!J5",
+      "Calc!J6",
+      "Calc!J7"
+     ],
+     "count": 60,
+     "range": "Calc!J2:J61"
+    },
+    {
+     "formula": "=F2*K2*IFERROR(VLOOKUP(B2,Rates!$J$2:$K$13,2,FALSE),0)*1.07",
+     "pattern": "=RC[-6]*RC[-1]*IFERROR(VLOOKUP(RC[-10],Rates!R2C10:R13C11,2,FALSE),0)*1.07",
+     "cells": [
+      "Calc!L2",
+      "Calc!L23",
+      "Calc!L27",
+      "Calc!L31",
+      "Calc!L34",
+      "Calc!L38"
+     ],
+     "count": 15,
+     "range": "Calc!L2:L53"
+    },
+    {
+     "formula": "=F3*K3*IFERROR(VLOOKUP(B3,Rates!$J$2:$K$13,2,FALSE),0)",
+     "pattern": "=RC[-6]*RC[-1]*IFERROR(VLOOKUP(RC[-10],Rates!R2C10:R13C11,2,FALSE),0)",
+     "cells": [
+      "Calc!L3",
+      "Calc!L4",
+      "Calc!L5",
+      "Calc!L6",
+      "Calc!L7",
+      "Calc!L8"
+     ],
+     "count": 45,
+     "range": "Calc!L3:L61"
+    }
+   ],
+   "truncated": false
+  },
+  "formula_pattern_breaks": {
+   "count": 1,
+   "items": [
+    {
+     "range": "Calc!L1:L61",
+     "majority": "=RC[-6]*RC[-1]*IFERROR(VLOOKUP(RC[-10],Rates!R2C10:R13C11,2,FALSE),0)",
+     "majority_count": 45,
+     "different": [
+      "L2",
+      "L23",
+      "L27",
+      "L31",
+      "L34",
+      "L38",
+      "L39",
+      "L41",
+      "L42",
+      "L45",
+      "L47",
+      "L48",
+      "L49",
+      "L52",
+      "L53"
+     ],
+     "different_count": 15
+    }
+   ],
+   "truncated": false
+  },
+  "hidden_columns": {
+   "count": 1,
+   "items": [
+    "Calc!M:M"
+   ],
+   "truncated": false
+  },
+  "hidden_sheets": {
+   "count": 2,
+   "items": [
+    {
+     "sheet": "old_rates",
+     "state": "hidden"
+    },
+    {
+     "sheet": "adj",
+     "state": "veryHidden"
+    }
+   ],
+   "truncated": false
+  },
+  "hidden_text": {
+   "count": 1,
+   "items": [
+    {
+     "value": "adj",
+     "reason": "white or near-white font on white background",
+     "cells": [
+      "Calc!M1",
+      "Calc!M2",
+      "Calc!M3",
+      "Calc!M4",
+      "Calc!M5",
+      "Calc!M6"
+     ],
+     "count": 61,
+     "range": "Calc!M1:M61"
+    }
+   ],
+   "truncated": false
+  },
+  "literals": {
+   "count": 28,
+   "items": [
+    {
+     "value": 1000000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 9.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 600000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 8.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 400000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 7.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 250000.0,
+     "context": "compare",
+     "function": "AND",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G4"
+     ],
+     "count": 120,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 6.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G4"
+     ],
+     "count": 120,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 150000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 5.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 100000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 4.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 50000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 3.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 25000.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 2.0,
+     "context": "arg",
+     "function": "IF",
+     "formula": "=IF(F2>=1000000,9,IF(F2>=600000,8,IF(F2>=400000,7,IF(AND(C2=\"EMEA\",F2>=250000),6,IF(F2>250000,6,IF(F2>=150000,5,IF(F2>=100000,4,IF(F2>=50000,3,IF(F2>=25000,2,1)))))))))",
+     "pattern": "=IF(RC[-1]>=1000000,9,IF(RC[-1]>=600000,8,IF(RC[-1]>=400000,7,IF(AND(RC[-4]=\"EMEA\",RC[-1]>=250000),6,IF(RC[-1]>250000,6,IF(RC[-1]>=150000,5,IF(RC[-1]>=100000,4,IF(RC[-1]>=50000,3,IF(RC[-1]>=25000,2,1)))))))))",
+     "cells": [
+      "Calc!G2",
+      "Calc!G3",
+      "Calc!G4",
+      "Calc!G5",
+      "Calc!G6",
+      "Calc!G7"
+     ],
+     "count": 60,
+     "range": "Calc!G2:G61"
+    },
+    {
+     "value": 0.18,
+     "context": "arg",
+     "function": "MIN",
+     "formula": "=MIN(H2+I2+J2,0.18)",
+     "pattern": "=MIN(RC[-3]+RC[-2]+RC[-1],0.18)",
+     "cells": [
+      "Calc!K2",
+      "Calc!K3",
+      "Calc!K4",
+      "Calc!K5",
+      "Calc!K6",
+      "Calc!K7"
+     ],
+     "count": 60,
+     "range": "Calc!K2:K61"
+    },
+    {
+     "value": 1.07,
+     "context": "multiply",
+     "function": null,
+     "formula": "=F2*K2*IFERROR(VLOOKUP(B2,Rates!$J$2:$K$13,2,FALSE),0)*1.07",
+     "pattern": "=RC[-6]*RC[-1]*IFERROR(VLOOKUP(RC[-10],Rates!R2C10:R13C11,2,FALSE),0)*1.07",
+     "cells": [
+      "Calc!L2",
+      "Calc!L23",
+      "Calc!L27",
+      "Calc!L31",
+      "Calc!L34",
+      "Calc!L38"
+     ],
+     "count": 15,
+     "range": "Calc!L2:L53"
+    },
+    {
+     "value": 90.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(Inputs!H2>90,-0.02*L2,0)",
+     "pattern": "=IF(Inputs!RC[-5]>90,-0.02*RC[-1],0)",
+     "cells": [
+      "Calc!M2",
+      "Calc!M3",
+      "Calc!M4",
+      "Calc!M5",
+      "Calc!M6",
+      "Calc!M7"
+     ],
+     "count": 60,
+     "range": "Calc!M2:M61"
+    },
+    {
+     "value": 0.02,
+     "context": "multiply",
+     "function": "IF",
+     "formula": "=IF(Inputs!H2>90,-0.02*L2,0)",
+     "pattern": "=IF(Inputs!RC[-5]>90,-0.02*RC[-1],0)",
+     "cells": [
+      "Calc!M2",
+      "Calc!M3",
+      "Calc!M4",
+      "Calc!M5",
+      "Calc!M6",
+      "Calc!M7"
+     ],
+     "count": 60,
+     "range": "Calc!M2:M61"
+    },
+    {
+     "value": 3.0,
+     "context": "multiply",
+     "function": "ROUNDUP",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=1,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=1,RC14,0)",
+     "cells": [
+      "Calc!O2",
+      "Calc!O3",
+      "Calc!O4",
+      "Calc!O5",
+      "Calc!O6",
+      "Calc!O7"
+     ],
+     "count": 60,
+     "range": "Calc!O2:O61"
+    },
+    {
+     "value": 1.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=1,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=1,RC14,0)",
+     "cells": [
+      "Calc!O2",
+      "Calc!O3",
+      "Calc!O4",
+      "Calc!O5",
+      "Calc!O6",
+      "Calc!O7"
+     ],
+     "count": 60,
+     "range": "Calc!O2:O61"
+    },
+    {
+     "value": 3.0,
+     "context": "multiply",
+     "function": "ROUNDUP",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=2,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=2,RC14,0)",
+     "cells": [
+      "Calc!P2",
+      "Calc!P3",
+      "Calc!P4",
+      "Calc!P5",
+      "Calc!P6",
+      "Calc!P7"
+     ],
+     "count": 60,
+     "range": "Calc!P2:P61"
+    },
+    {
+     "value": 2.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=2,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=2,RC14,0)",
+     "cells": [
+      "Calc!P2",
+      "Calc!P3",
+      "Calc!P4",
+      "Calc!P5",
+      "Calc!P6",
+      "Calc!P7"
+     ],
+     "count": 60,
+     "range": "Calc!P2:P61"
+    },
+    {
+     "value": 3.0,
+     "context": "multiply",
+     "function": "ROUNDUP",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=3,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=3,RC14,0)",
+     "cells": [
+      "Calc!Q2",
+      "Calc!Q3",
+      "Calc!Q4",
+      "Calc!Q5",
+      "Calc!Q6",
+      "Calc!Q7"
+     ],
+     "count": 60,
+     "range": "Calc!Q2:Q61"
+    },
+    {
+     "value": 3.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=3,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=3,RC14,0)",
+     "cells": [
+      "Calc!Q2",
+      "Calc!Q3",
+      "Calc!Q4",
+      "Calc!Q5",
+      "Calc!Q6",
+      "Calc!Q7"
+     ],
+     "count": 60,
+     "range": "Calc!Q2:Q61"
+    },
+    {
+     "value": 3.0,
+     "context": "multiply",
+     "function": "ROUNDUP",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=4,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=4,RC14,0)",
+     "cells": [
+      "Calc!R2",
+      "Calc!R3",
+      "Calc!R4",
+      "Calc!R5",
+      "Calc!R6",
+      "Calc!R7"
+     ],
+     "count": 60,
+     "range": "Calc!R2:R61"
+    },
+    {
+     "value": 4.0,
+     "context": "compare",
+     "function": "IF",
+     "formula": "=IF(ROUNDUP(MONTH($E2)/3,0)=4,$N2,0)",
+     "pattern": "=IF(ROUNDUP(MONTH(RC5)/3,0)=4,RC14,0)",
+     "cells": [
+      "Calc!R2",
+      "Calc!R3",
+      "Calc!R4",
+      "Calc!R5",
+      "Calc!R6",
+      "Calc!R7"
+     ],
+     "count": 60,
+     "range": "Calc!R2:R61"
+    }
+   ],
+   "truncated": false
+  },
+  "merged_ranges": {
+   "count": 1,
+   "items": [
+    "Summary!B2:C2"
+   ],
+   "truncated": false
+  },
+  "ref_errors_in_formulas": {
+   "count": 0,
+   "items": [],
+   "truncated": false
+  },
+  "text_numbers": {
+   "count": 4,
+   "items": [
+    {
+     "cell": "Inputs!E16",
+     "value": "64,500",
+     "indian_grouping": false
+    },
+    {
+     "cell": "Inputs!E26",
+     "value": "1,25,000",
+     "indian_grouping": true
+    },
+    {
+     "cell": "Inputs!E59",
+     "value": "85000",
+     "indian_grouping": false
+    },
+    {
+     "cell": "Inputs!E60",
+     "value": "2,10,000",
+     "indian_grouping": true
+    }
+   ],
+   "truncated": false
+  },
+  "vba_writes": {
+   "count": 1,
+   "items": [
+    {
+     "module": "modAccelerator.bas",
+     "line": "ws.Cells(r, cFinal).Value = ws.Cells(r, cNet).Value * 1.15"
+    }
+   ],
+   "truncated": false
+  },
+  "volatile": {
+   "count": 1,
+   "items": [
+    {
+     "functions": [
+      "OFFSET"
+     ],
+     "formula": "=SUMIF(Calc!$B$2:$B$61,$A5,OFFSET(Calc!$O$2:$O$61,0,MATCH($B$2,Calc!$O$1:$R$1,0)-1))",
+     "pattern": "=SUMIF(Calc!R2C2:R61C2,RC1,OFFSET(Calc!R2C15:R61C15,0,MATCH(R2C2,Calc!R1C15:R1C18,0)-1))",
+     "cells": [
+      "Summary!D5",
+      "Summary!D6",
+      "Summary!D7",
+      "Summary!D8",
+      "Summary!D9",
+      "Summary!D10"
+     ],
+     "count": 12,
+     "range": "Summary!D5:D16"
+    }
+   ],
+   "truncated": false
+  },
+  "whitespace_text": {
+   "count": 5,
+   "items": [
+    {
+     "cell": "Inputs!B3",
+     "value": "Rohan Mehta "
+    },
+    {
+     "cell": "Inputs!B7",
+     "value": "Rohan Mehta "
+    },
+    {
+     "cell": "Inputs!B20",
+     "value": "Rohan Mehta "
+    },
+    {
+     "cell": "Inputs!B21",
+     "value": "Rohan Mehta "
+    },
+    {
+     "cell": "Inputs!B55",
+     "value": "Rohan Mehta "
+    }
+   ],
+   "truncated": false
+  }
+ },
+ "summary": {
+  "comments": 1,
+  "conditional_formats": 0,
+  "constants_in_formula_runs": 1,
+  "data_validations": 1,
+  "error_masking": 3,
+  "formula_pattern_breaks": 1,
+  "hidden_columns": 1,
+  "hidden_sheets": 2,
+  "hidden_text": 1,
+  "literals": 28,
+  "merged_ranges": 1,
+  "ref_errors_in_formulas": 0,
+  "text_numbers": 4,
+  "vba_writes": 1,
+  "volatile": 1,
+  "whitespace_text": 5
+ }
+}

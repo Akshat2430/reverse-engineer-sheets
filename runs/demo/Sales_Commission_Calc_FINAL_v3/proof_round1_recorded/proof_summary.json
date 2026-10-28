@@ -1,0 +1,137 @@
+{
+ "engine": {
+  "version": "16.114.2",
+  "platform": "Darwin",
+  "closed_stale": [
+   "engine_4_Sales_Commission_Calc_FINAL_v3__USE_THIS_.xlsm"
+  ],
+  "engine": "excel (via bridge)",
+  "locale": "en_IN",
+  "iteration": {
+   "on": false,
+   "count": 100,
+   "delta": 0.001
+  },
+  "books": [],
+  "bridge": true,
+  "allowed_root": "runs"
+ },
+ "today": "2026-10-28",
+ "probe_date": "2026-10-28",
+ "tolerance": 0.005,
+ "cases": 3000,
+ "outputs": 43,
+ "excel_cases": 301,
+ "replay_cases": 2699,
+ "excel_pass_rate": 1.0,
+ "replay_pass_rate": 0.9985179696183771,
+ "pass_rate": 0.9986666666666667,
+ "outputs_all_pass": 20,
+ "outputs_failing": {
+  "Summary!C5": {
+   "pass": 2996,
+   "fail": 4
+  },
+  "Summary!C6": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C7": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C8": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C10": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C11": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C12": {
+   "pass": 2998,
+   "fail": 2
+  },
+  "Summary!C13": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C15": {
+   "pass": 2998,
+   "fail": 2
+  },
+  "Summary!C16": {
+   "pass": 2998,
+   "fail": 2
+  },
+  "Summary!C19": {
+   "pass": 2996,
+   "fail": 4
+  },
+  "Summary!C20": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!C21": {
+   "pass": 2998,
+   "fail": 2
+  },
+  "Summary!C22": {
+   "pass": 2997,
+   "fail": 3
+  },
+  "Summary!C24": {
+   "pass": 2996,
+   "fail": 4
+  },
+  "Summary!C26": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!D5": {
+   "pass": 2997,
+   "fail": 3
+  },
+  "Summary!D7": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!D10": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!D11": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!D12": {
+   "pass": 2998,
+   "fail": 2
+  },
+  "Summary!D13": {
+   "pass": 2999,
+   "fail": 1
+  },
+  "Summary!D16": {
+   "pass": 2998,
+   "fail": 2
+  }
+ },
+ "rounding_only": [],
+ "failing_input_blocks": {
+  "Rates!A2:A10": {
+   "fail": 4,
+   "changed": 229
+  }
+ },
+ "case_kinds": {
+  "saved inputs": 1,
+  "random": 300,
+  "replay": 2699
+ },
+ "resets_after_circular_errors": 0
+}

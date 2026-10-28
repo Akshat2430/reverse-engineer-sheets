@@ -17,7 +17,9 @@
       "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/.venv/**)",
       "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/docs/**)",
       "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/requirements.txt)",
-      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/pytest.ini)"
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/pytest.ini)",
+      "Read(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/runs/demo/**)",
+      "Read(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/docs/**)"
     ]
   },
   "sandbox": {
@@ -31,7 +33,9 @@
         "~/.claude/file-history",
         "~/.claude/todos",
         "~/.claude/history.jsonl",
-        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/.git"
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/.git",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/runs/demo",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/docs"
       ],
       "denyWrite": [
         "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/sheetre",

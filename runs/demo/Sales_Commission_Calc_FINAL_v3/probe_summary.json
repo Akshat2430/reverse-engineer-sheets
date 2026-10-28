@@ -1,0 +1,7905 @@
+{
+ "engine": {
+  "version": "16.114.2",
+  "platform": "Darwin",
+  "closed_stale": [
+   "engine_4_Sales_Commission_Calc_FINAL_v3__USE_THIS_.xlsm"
+  ],
+  "engine": "excel (via bridge)",
+  "locale": "en_IN",
+  "iteration": {
+   "on": false,
+   "count": 100,
+   "delta": 0.001
+  },
+  "books": [],
+  "bridge": true,
+  "allowed_root": "runs"
+ },
+ "coverage": "standard",
+ "runs": 2699,
+ "planned": 2699,
+ "cap": 3000,
+ "cap_hit": false,
+ "probe_date": "2026-10-28",
+ "base_outputs": {
+  "Summary!C5": 307615.0,
+  "Summary!C6": 131796.3625,
+  "Summary!C7": 7638.3125,
+  "Summary!C8": 98156.23062500001,
+  "Summary!C9": 130210.75565,
+  "Summary!C10": 67577.60212499999,
+  "Summary!C11": 157688.5,
+  "Summary!C12": 98333.56250000001,
+  "Summary!C13": 387152.1,
+  "Summary!C14": 0.0,
+  "Summary!C15": 118924.75000000001,
+  "Summary!C16": 36562.25,
+  "Summary!C19": 447049.675,
+  "Summary!C20": 291444.5884,
+  "Summary!C21": 644374.1625,
+  "Summary!C22": 155487.0,
+  "Summary!C24": 1541655.4259000001,
+  "Summary!C25": 15304000.0,
+  "Summary!C26": 0.10073545647543126,
+  "Summary!D5": 306910.0,
+  "Summary!D6": 0.0,
+  "Summary!D7": 1667.5,
+  "Summary!D8": 49498.200000000004,
+  "Summary!D9": 43099.600000000006,
+  "Summary!D10": 24941.700000000004,
+  "Summary!D11": 105450.00000000001,
+  "Summary!D12": 4207.5,
+  "Summary!D13": 13340.0,
+  "Summary!D14": 0.0,
+  "Summary!D15": 0.0,
+  "Summary!D16": 6765.0,
+  "Summary!E5": 5.0,
+  "Summary!E6": 5.0,
+  "Summary!E7": 5.0,
+  "Summary!E8": 5.0,
+  "Summary!E9": 5.0,
+  "Summary!E10": 5.0,
+  "Summary!E11": 5.0,
+  "Summary!E12": 5.0,
+  "Summary!E13": 5.0,
+  "Summary!E14": 0.0,
+  "Summary!E15": 5.0,
+  "Summary!E16": 5.0
+ },
+ "resets_after_circular_errors": 0,
+ "nondeterministic_outputs": [],
+ "date_or_random_functions": [],
+ "note_on_dates": null,
+ "recalculated_differs_from_cached": [],
+ "inputs_with_no_effect": [
+  "Calc!O1",
+  "Calc!P1",
+  "Calc!R1",
+  "Inputs!D61",
+  "Inputs!G2",
+  "Inputs!G61",
+  "Inputs!H16",
+  "Inputs!H20",
+  "Inputs!H21",
+  "Inputs!H26",
+  "Inputs!H3",
+  "Inputs!H40",
+  "Inputs!H41",
+  "Inputs!H42",
+  "Inputs!H43",
+  "Inputs!H44",
+  "Inputs!H45",
+  "Inputs!H46",
+  "Inputs!H47",
+  "Inputs!H48",
+  "Inputs!H49",
+  "Inputs!H50",
+  "Inputs!H51",
+  "Inputs!H52",
+  "Inputs!H53",
+  "Inputs!H54",
+  "Inputs!H55",
+  "Inputs!H56",
+  "Inputs!H57",
+  "Inputs!H58",
+  "Inputs!H59",
+  "Inputs!H60",
+  "Inputs!H61",
+  "Inputs!H7",
+  "Rates!B5",
+  "Rates!G5",
+  "Rates!G6",
+  "Rates!H5",
+  "Rates!H6",
+  "Rates!K11"
+ ],
+ "inputs_not_probed": [
+  "Calc!S43",
+  "Calc!S44",
+  "Calc!S45",
+  "Calc!S46",
+  "Calc!S48",
+  "Calc!S49",
+  "Calc!S50",
+  "Calc!S52",
+  "Calc!S53",
+  "Calc!S54",
+  "Calc!S55",
+  "Calc!S56",
+  "Calc!S57",
+  "Calc!S58",
+  "Calc!S59",
+  "Calc!S60",
+  "Inputs!B10",
+  "Inputs!B11",
+  "Inputs!B12",
+  "Inputs!B13",
+  "Inputs!B14",
+  "Inputs!B15",
+  "Inputs!B16",
+  "Inputs!B17",
+  "Inputs!B18",
+  "Inputs!B19",
+  "Inputs!B20",
+  "Inputs!B21",
+  "Inputs!B23",
+  "Inputs!B24",
+  "Inputs!B25",
+  "Inputs!B26",
+  "Inputs!B27",
+  "Inputs!B28",
+  "Inputs!B29",
+  "Inputs!B3",
+  "Inputs!B30",
+  "Inputs!B31",
+  "Inputs!B33",
+  "Inputs!B34",
+  "Inputs!B35",
+  "Inputs!B36",
+  "Inputs!B37",
+  "Inputs!B38",
+  "Inputs!B39",
+  "Inputs!B4",
+  "Inputs!B40",
+  "Inputs!B41",
+  "Inputs!B42",
+  "Inputs!B43",
+  "Inputs!B44",
+  "Inputs!B45",
+  "Inputs!B46",
+  "Inputs!B47",
+  "Inputs!B48",
+  "Inputs!B49",
+  "Inputs!B5",
+  "Inputs!B50",
+  "Inputs!B51",
+  "Inputs!B52",
+  "Inputs!B53",
+  "Inputs!B54",
+  "Inputs!B55",
+  "Inputs!B56",
+  "Inputs!B57",
+  "Inputs!B58",
+  "Inputs!B59",
+  "Inputs!B6",
+  "Inputs!B60",
+  "Inputs!B7",
+  "Inputs!B8",
+  "Inputs!B9",
+  "Inputs!C10",
+  "Inputs!C11",
+  "Inputs!C12",
+  "Inputs!C13",
+  "Inputs!C14",
+  "Inputs!C15",
+  "Inputs!C16",
+  "Inputs!C17",
+  "Inputs!C18",
+  "Inputs!C19",
+  "Inputs!C20",
+  "Inputs!C21",
+  "Inputs!C23",
+  "Inputs!C24",
+  "Inputs!C25",
+  "Inputs!C26",
+  "Inputs!C27",
+  "Inputs!C28",
+  "Inputs!C29",
+  "Inputs!C3",
+  "Inputs!C30",
+  "Inputs!C31",
+  "Inputs!C33",
+  "Inputs!C34",
+  "Inputs!C35",
+  "Inputs!C36",
+  "Inputs!C37",
+  "Inputs!C38",
+  "Inputs!C39",
+  "Inputs!C4",
+  "Inputs!C40",
+  "Inputs!C41",
+  "Inputs!C42",
+  "Inputs!C43",
+  "Inputs!C44",
+  "Inputs!C45",
+  "Inputs!C46",
+  "Inputs!C47",
+  "Inputs!C48",
+  "Inputs!C49",
+  "Inputs!C5",
+  "Inputs!C50",
+  "Inputs!C51",
+  "Inputs!C52",
+  "Inputs!C53",
+  "Inputs!C54",
+  "Inputs!C55",
+  "Inputs!C56",
+  "Inputs!C57",
+  "Inputs!C58",
+  "Inputs!C59",
+  "Inputs!C6",
+  "Inputs!C60",
+  "Inputs!C7",
+  "Inputs!C8",
+  "Inputs!C9",
+  "Inputs!D10",
+  "Inputs!D11",
+  "Inputs!D12",
+  "Inputs!D13",
+  "Inputs!D14",
+  "Inputs!D15",
+  "Inputs!D16",
+  "Inputs!D17",
+  "Inputs!D18",
+  "Inputs!D19",
+  "Inputs!D20",
+  "Inputs!D21",
+  "Inputs!D23",
+  "Inputs!D24",
+  "Inputs!D25",
+  "Inputs!D26",
+  "Inputs!D27",
+  "Inputs!D28",
+  "Inputs!D29",
+  "Inputs!D3",
+  "Inputs!D30",
+  "Inputs!D31",
+  "Inputs!D33",
+  "Inputs!D34",
+  "Inputs!D35",
+  "Inputs!D36",
+  "Inputs!D37",
+  "Inputs!D38",
+  "Inputs!D39",
+  "Inputs!D4",
+  "Inputs!D40",
+  "Inputs!D41",
+  "Inputs!D42",
+  "Inputs!D43",
+  "Inputs!D44",
+  "Inputs!D45",
+  "Inputs!D46",
+  "Inputs!D47",
+  "Inputs!D48",
+  "Inputs!D49",
+  "Inputs!D5",
+  "Inputs!D50",
+  "Inputs!D51",
+  "Inputs!D52",
+  "Inputs!D53",
+  "Inputs!D54",
+  "Inputs!D55",
+  "Inputs!D56",
+  "Inputs!D57",
+  "Inputs!D58",
+  "Inputs!D59",
+  "Inputs!D6",
+  "Inputs!D60",
+  "Inputs!D7",
+  "Inputs!D8",
+  "Inputs!D9",
+  "Inputs!E16",
+  "Inputs!E26",
+  "Inputs!E59",
+  "Inputs!E60",
+  "Inputs!G10",
+  "Inputs!G11",
+  "Inputs!G12",
+  "Inputs!G13",
+  "Inputs!G14",
+  "Inputs!G15",
+  "Inputs!G16",
+  "Inputs!G17",
+  "Inputs!G18",
+  "Inputs!G19",
+  "Inputs!G20",
+  "Inputs!G21",
+  "Inputs!G23",
+  "Inputs!G24",
+  "Inputs!G25",
+  "Inputs!G26",
+  "Inputs!G27",
+  "Inputs!G28",
+  "Inputs!G29",
+  "Inputs!G3",
+  "Inputs!G30",
+  "Inputs!G31",
+  "Inputs!G33",
+  "Inputs!G34",
+  "Inputs!G35",
+  "Inputs!G36",
+  "Inputs!G37",
+  "Inputs!G38",
+  "Inputs!G39",
+  "Inputs!G4",
+  "Inputs!G40",
+  "Inputs!G41",
+  "Inputs!G42",
+  "Inputs!G43",
+  "Inputs!G44",
+  "Inputs!G45",
+  "Inputs!G46",
+  "Inputs!G47",
+  "Inputs!G48",
+  "Inputs!G49",
+  "Inputs!G5",
+  "Inputs!G50",
+  "Inputs!G51",
+  "Inputs!G52",
+  "Inputs!G53",
+  "Inputs!G54",
+  "Inputs!G55",
+  "Inputs!G56",
+  "Inputs!G57",
+  "Inputs!G58",
+  "Inputs!G59",
+  "Inputs!G6",
+  "Inputs!G60",
+  "Inputs!G7",
+  "Inputs!G8",
+  "Inputs!G9",
+  "Rates!B7",
+  "Rates!B8",
+  "Rates!B9",
+  "Rates!E7",
+  "Rates!E8",
+  "Rates!E9",
+  "Rates!J10",
+  "Rates!J11",
+  "Rates!J12",
+  "Rates!J3",
+  "Rates!J4",
+  "Rates!J5",
+  "Rates!J7",
+  "Rates!J9",
+  "Summary!A10",
+  "Summary!A12",
+  "Summary!A13",
+  "Summary!A14",
+  "Summary!A15",
+  "Summary!A6",
+  "Summary!A7",
+  "Summary!A8"
+ ],
+ "sensitivity": {
+  "Summary!B2": {
+   "Summary!D5": Infinity,
+   "Summary!D7": Infinity,
+   "Summary!D8": Infinity,
+   "Summary!D9": Infinity,
+   "Summary!D10": Infinity,
+   "Summary!D11": Infinity,
+   "Summary!D12": Infinity,
+   "Summary!D13": Infinity,
+   "Summary!D15": Infinity,
+   "Summary!D16": Infinity
+  },
+  "Inputs!E2": {
+   "Summary!C8": Infinity,
+   "Summary!C20": Infinity,
+   "Summary!C24": Infinity,
+   "Summary!C26": Infinity,
+   "Summary!C25": 1710000.0
+  },
+  "Inputs!E3": {
+   "Summary!C25": 873500.0,
+   "Summary!C26": 0.005439185364320143
+  },
+  "Inputs!E4": {
+   "Summary!C25": 832500.0,
+   "Summary!C11": 113618.75,
+   "Summary!C21": 113618.75,
+   "Summary!C24": 113618.75,
+   "Summary!C26": 0.0023521183283559677
+  },
+  "Inputs!E5": {
+   "Summary!C25": 535001.0,
+   "Summary!C12": 96600.00000000001,
+   "Summary!C21": 96600.0,
+   "Summary!C24": 96600.0,
+   "Summary!C26": 0.0033204013688268724
+  },
+  "Inputs!E6": {
+   "Summary!C25": 695001.0,
+   "Summary!C11": 110600.0,
+   "Summary!C21": 110600.0,
+   "Summary!C24": 110600.0,
+   "Summary!C26": 0.0025369621694840555
+  },
+  "Inputs!E7": {
+   "Summary!C25": 755001.0,
+   "Summary!C26": 0.00473599636580177
+  },
+  "Inputs!E8": {
+   "Summary!C25": 860001.0,
+   "Summary!C15": 161700.00000000006,
+   "Summary!C22": 161700.00000000006,
+   "Summary!C24": 161700.0,
+   "Summary!C26": 0.004644117015041402
+  },
+  "Inputs!E9": {
+   "Summary!C25": 538501.0,
+   "Summary!C13": 78650.0,
+   "Summary!C21": 78650.0,
+   "Summary!C24": 78650.0,
+   "Summary!C26": 0.002203168466597266
+  },
+  "Inputs!E10": {
+   "Summary!C25": 860001.0,
+   "Summary!C16": 127300.0,
+   "Summary!C22": 127300.0,
+   "Summary!C24": 127300.0,
+   "Summary!C26": 0.002515930922490056
+  },
+  "Inputs!E11": {
+   "Summary!C25": 751001.0,
+   "Summary!C16": 120682.5,
+   "Summary!C22": 120682.5,
+   "Summary!C24": 120682.5,
+   "Summary!C26": 0.0028047444526285437
+  },
+  "Inputs!E12": {
+   "Summary!C25": 915501.0,
+   "Summary!C15": 131408.75,
+   "Summary!C22": 131408.75,
+   "Summary!C24": 131408.75,
+   "Summary!C26": 0.0024159462126910614
+  },
+  "Inputs!E13": {
+   "Summary!C25": 937501.0,
+   "Summary!C15": 132343.75,
+   "Summary!C22": 132343.75,
+   "Summary!C24": 132343.75,
+   "Summary!C26": 0.002333790570715963
+  },
+  "Inputs!E14": {
+   "Summary!C25": 759001.0,
+   "Summary!C6": 148472.45,
+   "Summary!C19": 148472.45,
+   "Summary!C24": 148472.44999999972,
+   "Summary!C26": 0.004483237162120859
+  },
+  "Inputs!E15": {
+   "Summary!C25": 750001.0,
+   "Summary!C6": 115625.0,
+   "Summary!C24": 115625.0,
+   "Summary!C19": 115624.99999999994,
+   "Summary!C26": 0.002496163426150902
+  },
+  "Inputs!E17": {
+   "Summary!C25": 976501.0,
+   "Summary!C19": 144295.00000000006,
+   "Summary!C5": 144295.0,
+   "Summary!C24": 144295.0,
+   "Summary!C26": 0.0028209715151095716
+  },
+  "Inputs!E18": {
+   "Summary!C25": 953001.0,
+   "Summary!C12": 133590.0,
+   "Summary!C21": 133590.0,
+   "Summary!C24": 133590.0,
+   "Summary!C26": 0.0023121799827098555
+  },
+  "Inputs!E19": {
+   "Summary!C25": 959501.0,
+   "Summary!C7": 66892.5,
+   "Summary!C19": 66892.5,
+   "Summary!C24": 66892.5,
+   "Summary!C26": 0.002752367264431843
+  },
+  "Inputs!E20": {
+   "Summary!C25": 502501.0,
+   "Summary!C26": 0.003419901431224004
+  },
+  "Inputs!E21": {
+   "Summary!C25": 545001.0,
+   "Summary!C26": 0.003463999056758621
+  },
+  "Inputs!E22": {
+   "Summary!C7": Infinity,
+   "Summary!C19": Infinity,
+   "Summary!C24": Infinity,
+   "Summary!C26": Infinity,
+   "Summary!D7": Infinity,
+   "Summary!C25": 954001.0
+  },
+  "Inputs!E23": {
+   "Summary!C25": 746501.0,
+   "Summary!C9": 122750.40000000002,
+   "Summary!C20": 122750.40000000002,
+   "Summary!D9": 122750.4,
+   "Summary!C24": 122750.3999999999,
+   "Summary!C26": 0.0029626106190517726
+  },
+  "Inputs!E24": {
+   "Summary!C25": 1013001.0,
+   "Summary!C19": 129250.02000000002,
+   "Summary!C24": 129250.02000000002,
+   "Summary!C5": 129250.01999999999,
+   "Summary!D5": 129250.01999999999,
+   "Summary!C26": 0.0024797064991464723
+  },
+  "Inputs!E25": {
+   "Summary!C25": 975001.0,
+   "Summary!C7": 70560.00000000001,
+   "Summary!D7": 70560.00000000001,
+   "Summary!C19": 70560.0,
+   "Summary!C24": 70560.0,
+   "Summary!C26": 0.0026019428883857776
+  },
+  "Inputs!E27": {
+   "Summary!C25": 779001.0,
+   "Summary!C24": 98139.73125000019,
+   "Summary!C10": 98139.73125000003,
+   "Summary!C20": 98139.73125000001,
+   "Summary!D10": 98139.73125000001,
+   "Summary!C26": 0.001222832223816403
+  },
+  "Inputs!E28": {
+   "Summary!C25": 695001.0,
+   "Summary!C24": 102900.06000000006,
+   "Summary!D11": 102900.06000000001,
+   "Summary!C11": 102900.06,
+   "Summary!C21": 102900.05999999994,
+   "Summary!C26": 0.0027203588415605356
+  },
+  "Inputs!E29": {
+   "Summary!C25": 908001.0,
+   "Summary!C5": 131090.0,
+   "Summary!C24": 131090.0,
+   "Summary!D5": 131090.0,
+   "Summary!C19": 131089.99999999994,
+   "Summary!C26": 0.0024440047816622484
+  },
+  "Inputs!E30": {
+   "Summary!C25": 967501.0,
+   "Summary!C7": 67012.5,
+   "Summary!C19": 67012.5,
+   "Summary!C24": 67012.5,
+   "Summary!D7": 67012.5,
+   "Summary!C26": 0.0027931664995661104
+  },
+  "Inputs!E31": {
+   "Summary!C25": 614501.0,
+   "Summary!C8": 137751.80000000005,
+   "Summary!D8": 137751.80000000002,
+   "Summary!C20": 137751.8,
+   "Summary!C24": 137751.7999999998,
+   "Summary!C26": 0.004764887520548253
+  },
+  "Inputs!E32": {
+   "Summary!C11": Infinity,
+   "Summary!C21": Infinity,
+   "Summary!C24": Infinity,
+   "Summary!C26": Infinity,
+   "Summary!D11": Infinity,
+   "Summary!C25": 965001.0
+  },
+  "Inputs!E33": {
+   "Summary!C25": 949001.0,
+   "Summary!C12": 170792.50000000006,
+   "Summary!D12": 170792.50000000003,
+   "Summary!C21": 170792.5,
+   "Summary!C24": 170792.5,
+   "Summary!C26": 0.004626502910528255
+  },
+  "Inputs!E34": {
+   "Summary!C25": 851001.0,
+   "Summary!C24": 101761.01250000019,
+   "Summary!C10": 101761.01250000003,
+   "Summary!C20": 101761.01250000001,
+   "Summary!D10": 101761.01250000001,
+   "Summary!C26": 0.0009925805657324815
+  },
+  "Inputs!E35": {
+   "Summary!C25": 877001.0,
+   "Summary!C16": 128235.0,
+   "Summary!C22": 128235.0,
+   "Summary!C24": 128235.0,
+   "Summary!D16": 128235.0,
+   "Summary!C26": 0.002465237295040279
+  },
+  "Inputs!E36": {
+   "Summary!C25": 1025001.0,
+   "Summary!C24": 171750.06000000006,
+   "Summary!C5": 171750.06,
+   "Summary!C19": 171750.06,
+   "Summary!D5": 171750.06,
+   "Summary!C26": 0.004828013302277903
+  },
+  "Inputs!E37": {
+   "Summary!C25": 768001.0,
+   "Summary!C13": 121660.0,
+   "Summary!C21": 121660.0,
+   "Summary!C24": 121660.0,
+   "Summary!D13": 121660.0,
+   "Summary!C26": 0.0027560458827071282
+  },
+  "Inputs!E38": {
+   "Summary!C25": 750001.0,
+   "Summary!C20": 123050.00000000006,
+   "Summary!C9": 123050.0,
+   "Summary!C24": 123050.0,
+   "Summary!D9": 123050.0,
+   "Summary!C26": 0.0029586649833951983
+  },
+  "Inputs!E39": {
+   "Summary!C25": 823001.0,
+   "Summary!C20": 100170.05625000002,
+   "Summary!C10": 100170.05625000001,
+   "Summary!D10": 100170.05625,
+   "Summary!C24": 100170.0562499999,
+   "Summary!C26": 0.0010705509748074743
+  },
+  "Inputs!E40": {
+   "Summary!C25": 500001.0,
+   "Summary!C26": 0.0034023123733777777
+  },
+  "Inputs!E41": {
+   "Summary!C25": 963001.0,
+   "Summary!C26": 0.005963505216560611
+  },
+  "Inputs!E42": {
+   "Summary!C25": 537001.0,
+   "Summary!C26": 0.003414875162419534
+  },
+  "Inputs!E43": {
+   "Summary!C25": 702501.0,
+   "Summary!C26": 0.004421126073052867
+  },
+  "Inputs!E44": {
+   "Summary!C25": 619501.0,
+   "Summary!C26": 0.00424976814135683
+  },
+  "Inputs!E45": {
+   "Summary!C25": 939001.0,
+   "Summary!C26": 0.005823474022188774
+  },
+  "Inputs!E46": {
+   "Summary!C25": 856501.0,
+   "Summary!C26": 0.005338944578925073
+  },
+  "Inputs!E47": {
+   "Summary!C25": 511001.0,
+   "Summary!C26": 0.0032548792753412936
+  },
+  "Inputs!E48": {
+   "Summary!C25": 755501.0,
+   "Summary!C26": 0.004738985233890186
+  },
+  "Inputs!E49": {
+   "Summary!C25": 855501.0,
+   "Summary!C26": 0.005333041147136161
+  },
+  "Inputs!E50": {
+   "Summary!C25": 838501.0,
+   "Summary!C26": 0.005232570900265424
+  },
+  "Inputs!E51": {
+   "Summary!C25": 918001.0,
+   "Summary!C26": 0.005700606835118693
+  },
+  "Inputs!E52": {
+   "Summary!C25": 972501.0,
+   "Summary!C26": 0.006018820148004367
+  },
+  "Inputs!E53": {
+   "Summary!C25": 975501.0,
+   "Summary!C26": 0.006036274608616055
+  },
+  "Inputs!E54": {
+   "Summary!C25": 783501.0,
+   "Summary!C26": 0.004906065328851059
+  },
+  "Inputs!E55": {
+   "Summary!C25": 943501.0,
+   "Summary!C26": 0.005849761382998267
+  },
+  "Inputs!E56": {
+   "Summary!C25": 848001.0,
+   "Summary!C26": 0.005288742108585931
+  },
+  "Inputs!E57": {
+   "Summary!C25": 1057501.0,
+   "Summary!C26": 0.007477475410500867
+  },
+  "Inputs!E58": {
+   "Summary!C25": 798001.0,
+   "Summary!C26": 0.00554163798045558
+  },
+  "Inputs!E61": {
+   "Summary!C25": 1485000.0,
+   "Summary!C26": 0.008910128826375333
+  },
+  "Inputs!H2": {
+   "Summary!C24": 233.79500000039116,
+   "Summary!C8": 233.79499999999825,
+   "Summary!C20": 233.7949999999837,
+   "Summary!C26": 1.527672503923161e-05
+  },
+  "Inputs!H4": {
+   "Summary!C11": 387.5,
+   "Summary!C21": 387.5,
+   "Summary!C24": 387.5,
+   "Summary!C26": 2.5320177731311122e-05
+  },
+  "Inputs!H5": {
+   "Summary!C12": 1568.0,
+   "Summary!C21": 1568.0,
+   "Summary!C24": 1568.0,
+   "Summary!C26": 0.00010245687401985726
+  },
+  "Inputs!H6": {
+   "Summary!C11": 488.0,
+   "Summary!C21": 488.0,
+   "Summary!C24": 488.0,
+   "Summary!C26": 3.188708834291065e-05
+  },
+  "Inputs!H8": {
+   "Summary!C15": 266.0,
+   "Summary!C22": 266.0,
+   "Summary!C24": 266.0,
+   "Summary!C26": 1.738107684265411e-05
+  },
+  "Inputs!H9": {
+   "Summary!C13": 1127.0,
+   "Summary!C21": 1127.0,
+   "Summary!C24": 1127.0,
+   "Summary!C26": 7.3640878201775e-05
+  },
+  "Inputs!H10": {
+   "Summary!C16": 154.0,
+   "Summary!C22": 154.0,
+   "Summary!C24": 154.0,
+   "Summary!C26": 1.006272869837066e-05
+  },
+  "Inputs!H11": {
+   "Summary!C24": 286.35000000009313,
+   "Summary!C16": 286.34999999999854,
+   "Summary!C22": 286.3499999999767,
+   "Summary!C26": 1.871079456351732e-05
+  },
+  "Inputs!H12": {
+   "Summary!C15": 71.82499999999709,
+   "Summary!C22": 71.82499999998254,
+   "Summary!C24": 71.82499999995343,
+   "Summary!C26": 4.693217459481036e-06
+  },
+  "Inputs!H13": {
+   "Summary!C15": 53.125,
+   "Summary!C22": 53.125,
+   "Summary!C24": 53.125,
+   "Summary!C26": 3.4713146889603363e-06
+  },
+  "Inputs!H14": {
+   "Summary!C6": 469.95000000001164,
+   "Summary!C19": 469.95000000001164,
+   "Summary!C24": 469.9499999997206,
+   "Summary!C26": 3.0707658128584225e-05
+  },
+  "Inputs!H15": {
+   "Summary!C6": 387.5,
+   "Summary!C19": 387.5,
+   "Summary!C24": 387.5,
+   "Summary!C26": 2.5320177731311122e-05
+  },
+  "Inputs!H17": {
+   "Summary!C24": 14.100000000093132,
+   "Summary!C5": 14.099999999976717,
+   "Summary!C19": 14.099999999976717,
+   "Summary!C26": 9.213277574471324e-07
+  },
+  "Inputs!H18": {
+   "Summary!C24": 28.200000000186265,
+   "Summary!C21": 28.20000000006985,
+   "Summary!C12": 28.19999999999709,
+   "Summary!C26": 1.8426555149081425e-06
+  },
+  "Inputs!H19": {
+   "Summary!C24": 12.150000000372529,
+   "Summary!C7": 12.149999999999636,
+   "Summary!C19": 12.149999999965075,
+   "Summary!C26": 7.939100888920692e-07
+  },
+  "Inputs!H22": {
+   "Summary!C24": 13.800000000279397,
+   "Summary!C7": 13.800000000000182,
+   "Summary!D7": 13.799999999999955,
+   "Summary!C19": 13.799999999988358,
+   "Summary!C26": 9.017250392207021e-07
+  },
+  "Inputs!H23": {
+   "Summary!C24": 433.9920000000857,
+   "Summary!C9": 433.99199999999837,
+   "Summary!D9": 433.99199999999837,
+   "Summary!C20": 433.99199999996927,
+   "Summary!C26": 2.8358076319914827e-05
+  },
+  "Inputs!H24": {
+   "Summary!C5": 2595.0,
+   "Summary!C19": 2595.0,
+   "Summary!C24": 2595.0,
+   "Summary!D5": 2595.0,
+   "Summary!C26": 0.00016956351280709991
+  },
+  "Inputs!H25": {
+   "Summary!C7": 10.0,
+   "Summary!C19": 10.0,
+   "Summary!C24": 10.0,
+   "Summary!D7": 10.0,
+   "Summary!C26": 6.534239414546228e-07
+  },
+  "Inputs!H27": {
+   "Summary!C24": 203.95537500013597,
+   "Summary!D10": 203.955375000005,
+   "Summary!C10": 203.95537499999045,
+   "Summary!C20": 203.95537499996135,
+   "Summary!C26": 1.3326932501306343e-05
+  },
+  "Inputs!H28": {
+   "Summary!C11": 2088.0,
+   "Summary!C21": 2088.0,
+   "Summary!C24": 2088.0,
+   "Summary!D11": 2088.0,
+   "Summary!C26": 0.00013643491897542825
+  },
+  "Inputs!H29": {
+   "Summary!C24": 78.20000000018626,
+   "Summary!C5": 78.20000000001164,
+   "Summary!C19": 78.20000000001164,
+   "Summary!D5": 78.20000000001164,
+   "Summary!C26": 5.109775222167379e-06
+  },
+  "Inputs!H30": {
+   "Summary!C7": 9.75,
+   "Summary!C19": 9.75,
+   "Summary!C24": 9.75,
+   "Summary!D7": 9.75,
+   "Summary!C26": 6.370883429140939e-07
+  },
+  "Inputs!H31": {
+   "Summary!C24": 989.9640000001527,
+   "Summary!D8": 989.9639999999999,
+   "Summary!C8": 989.9639999999927,
+   "Summary!C20": 989.9639999999781,
+   "Summary!C26": 6.468661787768781e-05
+  },
+  "Inputs!H32": {
+   "Summary!C11": 21.0,
+   "Summary!C21": 21.0,
+   "Summary!C24": 21.0,
+   "Summary!D11": 21.0,
+   "Summary!C26": 1.3721902770436056e-06
+  },
+  "Inputs!H33": {
+   "Summary!C24": 84.1500000001397,
+   "Summary!C21": 84.15000000002328,
+   "Summary!D12": 84.14999999999964,
+   "Summary!C12": 84.14999999999418,
+   "Summary!C26": 5.498562467329271e-06
+  },
+  "Inputs!H34": {
+   "Summary!C24": 131.5297500002198,
+   "Summary!D10": 131.5297500000015,
+   "Summary!C10": 131.52974999998696,
+   "Summary!C20": 131.52974999998696,
+   "Summary!C26": 8.594468766345842e-06
+  },
+  "Inputs!H35": {
+   "Summary!C24": 135.30000000004657,
+   "Summary!C16": 135.3000000000029,
+   "Summary!D16": 135.30000000000018,
+   "Summary!C22": 135.29999999998836,
+   "Summary!C26": 8.840825927863838e-06
+  },
+  "Inputs!H36": {
+   "Summary!C5": 3465.0,
+   "Summary!C19": 3465.0,
+   "Summary!C24": 3465.0,
+   "Summary!D5": 3465.0,
+   "Summary!C26": 0.00022641139571354107
+  },
+  "Inputs!H37": {
+   "Summary!C24": 266.8000000002794,
+   "Summary!C13": 266.80000000004657,
+   "Summary!C21": 266.80000000004657,
+   "Summary!D13": 266.7999999999993,
+   "Summary!C26": 1.7433350757989352e-05
+  },
+  "Inputs!H38": {
+   "Summary!C9": 428.0,
+   "Summary!C20": 428.0,
+   "Summary!C24": 428.0,
+   "Summary!D9": 428.0,
+   "Summary!C26": 2.7966544694196793e-05
+  },
+  "Inputs!H39": {
+   "Summary!C24": 163.34887500014156,
+   "Summary!D10": 163.34887500000332,
+   "Summary!C10": 163.34887499999604,
+   "Summary!C20": 163.34887499996694,
+   "Summary!C26": 1.0673606573446959e-05
+  },
+  "Rates!A2": {
+   "Summary!C5": Infinity,
+   "Summary!C16": Infinity,
+   "Summary!C19": Infinity,
+   "Summary!C22": Infinity,
+   "Summary!C24": Infinity,
+   "Summary!C26": Infinity,
+   "Summary!D16": Infinity
+  },
+  "Rates!A3": {
+   "Summary!C24": 7337.5,
+   "Summary!C15": 2940.0,
+   "Summary!C22": 2940.0,
+   "Summary!C19": 2557.5,
+   "Summary!C5": 1840.0,
+   "Summary!C21": 1840.0,
+   "Summary!D5": 1840.0,
+   "Summary!C12": 1490.0,
+   "Summary!D12": 1020.0,
+   "Summary!C7": 717.5
+  },
+  "Rates!A4": {
+   "Summary!C24": 2900.0,
+   "Summary!C15": 1470.0,
+   "Summary!C22": 1470.0,
+   "Summary!C19": 920.0,
+   "Summary!C5": 920.0,
+   "Summary!D5": 920.0,
+   "Summary!C21": 820.0,
+   "Summary!C7": 595.0,
+   "Summary!C12": 510.0,
+   "Summary!D12": 509.99999999999955
+  },
+  "Rates!A5": {
+   "Summary!C24": 5800.0,
+   "Summary!C15": 2940.0,
+   "Summary!C22": 2940.0,
+   "Summary!C5": 1840.0,
+   "Summary!C19": 1840.0,
+   "Summary!D5": 1840.0,
+   "Summary!C12": 1020.0,
+   "Summary!C21": 1020.0,
+   "Summary!D12": 1020.0,
+   "Summary!C26": 0.00037898588604286243
+  },
+  "Rates!A6": {
+   "Summary!C24": 56426.77500000037,
+   "Summary!C21": 49267.5,
+   "Summary!C11": 23500.0,
+   "Summary!D11": 18000.000000000015,
+   "Summary!C12": 14000.000000000015,
+   "Summary!C13": 11767.5,
+   "Summary!C20": 5481.075000000012,
+   "Summary!C9": 5387.450000000012,
+   "Summary!D9": 5387.450000000012,
+   "Summary!D8": 4124.850000000013
+  },
+  "Rates!A7": {
+   "Summary!C24": 35248.94999999972,
+   "Summary!C22": 13040.0,
+   "Summary!C20": 12845.350000000035,
+   "Summary!C16": 10240.000000000007,
+   "Summary!C10": 8779.350000000006,
+   "Summary!D10": 8779.350000000006,
+   "Summary!C19": 4723.600000000035,
+   "Summary!C6": 4723.600000000006,
+   "Summary!D13": 4640.000000000004,
+   "Summary!C13": 4640.0
+  },
+  "Rates!A8": {
+   "Summary!C24": 87954.11249999981,
+   "Summary!C20": 36747.81250000006,
+   "Summary!C22": 22820.0,
+   "Summary!C16": 17920.0,
+   "Summary!C21": 16370.0,
+   "Summary!C10": 15363.862500000017,
+   "Summary!D10": 15363.862500000003,
+   "Summary!C8": 13302.775000000009,
+   "Summary!C6": 12016.299999999988,
+   "Summary!C19": 12016.299999999988
+  },
+  "Rates!A9": {
+   "Summary!C21": 38887.5,
+   "Summary!C24": 38887.5,
+   "Summary!C13": 14087.5,
+   "Summary!C12": 13999.999999999985,
+   "Summary!C11": 10800.0,
+   "Summary!D11": 10799.999999999985,
+   "Summary!C26": 0.0025410023523261965
+  },
+  "Rates!K2": {
+   "Summary!C5": 2768535.0,
+   "Summary!C19": 2768535.0,
+   "Summary!C24": 2768535.0,
+   "Summary!D5": 2762190.0,
+   "Summary!C26": 0.18090270517511764
+  },
+  "Rates!K3": {
+   "Summary!C6": 128903.75200000004,
+   "Summary!C19": 128903.75200000004,
+   "Summary!C24": 128903.75199999986,
+   "Summary!C26": 0.00842287976999477
+  },
+  "Rates!K4": {
+   "Summary!C19": 16107.000000000058,
+   "Summary!C7": 16107.0,
+   "Summary!C24": 16107.0,
+   "Summary!D7": 11805.9,
+   "Summary!C26": 0.0010524699424987044
+  },
+  "Rates!K5": {
+   "Summary!C8": 186011.36799999996,
+   "Summary!C20": 186011.36799999996,
+   "Summary!C24": 186011.36799999978,
+   "Summary!D8": 150474.528,
+   "Summary!C26": 0.012154428123366437
+  },
+  "Rates!K6": {
+   "Summary!D9": 387896.4,
+   "Summary!C9": 387896.39999999997,
+   "Summary!C24": 387896.3999999999,
+   "Summary!C20": 387896.3999999998,
+   "Summary!C26": 0.02534607945635127
+  },
+  "Rates!K7": {
+   "Summary!C24": 109410.92400000012,
+   "Summary!C20": 109410.92400000006,
+   "Summary!C10": 109410.92400000004,
+   "Summary!D10": 109410.924,
+   "Summary!C26": 0.007149171719811831
+  },
+  "Rates!K8": {
+   "Summary!C11": 1339537.5,
+   "Summary!C21": 1339537.5,
+   "Summary!C24": 1339537.5,
+   "Summary!D11": 949050.0,
+   "Summary!C26": 0.08752858729743858
+  },
+  "Rates!K9": {
+   "Summary!C21": 255413.2000000002,
+   "Summary!C24": 255413.2000000002,
+   "Summary!C12": 255413.20000000007,
+   "Summary!D12": 12790.8,
+   "Summary!C26": 0.01668930998431785
+  },
+  "Rates!K10": {
+   "Summary!C13": 211857.59999999998,
+   "Summary!C21": 211857.59999999998,
+   "Summary!C24": 211857.59999999986,
+   "Summary!D13": 40553.6,
+   "Summary!C26": 0.013843282801881851
+  },
+  "Rates!K12": {
+   "Summary!C22": 59424.40000000002,
+   "Summary!C15": 59424.40000000001,
+   "Summary!C24": 59424.39999999991,
+   "Summary!C26": 0.003882932566649247
+  },
+  "Rates!K13": {
+   "Summary!C16": 259042.5,
+   "Summary!C22": 259042.5,
+   "Summary!C24": 259042.5,
+   "Summary!D16": 60885.0,
+   "Summary!C26": 0.01692645713538944
+  },
+  "Calc!Q1": {
+   "Summary!D5": Infinity,
+   "Summary!D6": Infinity,
+   "Summary!D7": Infinity,
+   "Summary!D8": Infinity,
+   "Summary!D9": Infinity,
+   "Summary!D10": Infinity,
+   "Summary!D11": Infinity,
+   "Summary!D12": Infinity,
+   "Summary!D13": Infinity,
+   "Summary!D14": Infinity
+  },
+  "Calc!S40": {
+   "Summary!C6": 543375.0,
+   "Summary!C19": 543374.9999999998,
+   "Summary!C24": 543374.9999999995,
+   "Summary!C26": 0.03550542341871403
+  },
+  "Calc!S47": {
+   "Summary!C9": 742997.0645999999,
+   "Summary!C20": 742997.0645999998,
+   "Summary!C24": 742997.0645999997,
+   "Summary!C26": 0.04854920704391007
+  },
+  "Calc!S51": {
+   "Summary!C22": 70017.75,
+   "Summary!C24": 70017.75,
+   "Summary!C16": 70017.74999999999,
+   "Summary!C26": 0.004575127417668592
+  },
+  "Calc!S61": {
+   "Summary!C19": 98195.62500000006,
+   "Summary!C6": 98195.625,
+   "Summary!C24": 98195.625,
+   "Summary!C26": 0.006416337232096184
+  },
+  "Inputs!B2": {
+   "Summary!C8": 11689.75,
+   "Summary!C20": 11689.75,
+   "Summary!C24": 11689.75,
+   "Summary!C15": 11689.75,
+   "Summary!C10": 8767.3125,
+   "Summary!C7": 5844.875,
+   "Summary!E8": 1.0,
+   "Summary!E10": 1.0,
+   "Summary!E15": 1.0,
+   "Summary!E7": 1.0
+  },
+  "Inputs!B22": {
+   "Summary!C15": 1380.0,
+   "Summary!D15": 1380.0,
+   "Summary!C12": 1380.0,
+   "Summary!D12": 1380.0,
+   "Summary!C10": 1035.0,
+   "Summary!D10": 1035.0,
+   "Summary!C7": 690.0,
+   "Summary!C19": 690.0,
+   "Summary!C24": 690.0,
+   "Summary!D7": 690.0
+  },
+  "Inputs!B32": {
+   "Summary!C11": 1050.0,
+   "Summary!C21": 1050.0,
+   "Summary!C24": 1050.0,
+   "Summary!D11": 1050.0,
+   "Summary!C15": 1050.0,
+   "Summary!D15": 1050.0,
+   "Summary!C10": 787.5,
+   "Summary!D10": 787.5,
+   "Summary!C7": 525.0,
+   "Summary!D7": 525.0
+  },
+  "Inputs!B61": {
+   "Summary!C6": 10910.625,
+   "Summary!C24": 10910.625,
+   "Summary!C10": 10910.625,
+   "Summary!C15": 10910.625,
+   "Summary!C7": 10910.625,
+   "Summary!E6": 1.0,
+   "Summary!E10": 1.0,
+   "Summary!E15": 1.0,
+   "Summary!E7": 1.0,
+   "Summary!C26": 0.0007129263591217905
+  },
+  "Inputs!C2": {
+   "Summary!C20": 11689.75,
+   "Summary!C19": 11689.75,
+   "Summary!C21": 11689.75,
+   "Summary!C22": 11689.75
+  },
+  "Inputs!C22": {
+   "Summary!C19": 690.0,
+   "Summary!C21": 690.0,
+   "Summary!C20": 690.0,
+   "Summary!C22": 690.0
+  },
+  "Inputs!C32": {
+   "Summary!C21": 1050.0,
+   "Summary!C19": 1050.0,
+   "Summary!C20": 1050.0,
+   "Summary!C22": 1050.0
+  },
+  "Inputs!C61": {
+   "Summary!C19": 10910.625,
+   "Summary!C21": 10910.625,
+   "Summary!C20": 10910.625,
+   "Summary!C22": 10910.625
+  },
+  "Inputs!D2": {
+   "Summary!C8": 2033.0,
+   "Summary!C20": 2033.0,
+   "Summary!C24": 2033.0,
+   "Summary!C26": 0.0001328410872974417
+  },
+  "Inputs!D22": {
+   "Summary!C7": 920.0,
+   "Summary!C19": 920.0,
+   "Summary!C24": 920.0,
+   "Summary!D7": 920.0,
+   "Summary!C26": 6.01150026137004e-05
+  },
+  "Inputs!D32": {
+   "Summary!C11": 350.0,
+   "Summary!C21": 350.0,
+   "Summary!C24": 350.0,
+   "Summary!D11": 350.0,
+   "Summary!C26": 2.2869837950870164e-05
+  },
+  "Inputs!G22": {
+   "Summary!D7": 690.0
+  },
+  "Inputs!G32": {
+   "Summary!D11": 1050.0
+  },
+  "Rates!A10": {
+   "Summary!C19": 20880.00000000006,
+   "Summary!C5": 20880.0,
+   "Summary!C24": 20880.0,
+   "Summary!D5": 20880.0,
+   "Summary!C26": 0.0013643491897543242
+  },
+  "Rates!B2": {
+   "Summary!C5": 3525.0,
+   "Summary!C19": 3525.0,
+   "Summary!C24": 3525.0,
+   "Summary!C26": 0.0002303319393622688
+  },
+  "Rates!B6": {
+   "Summary!C24": 202159.0499999998,
+   "Summary!C20": 78976.70000000001,
+   "Summary!C22": 75277.5,
+   "Summary!C16": 63377.5,
+   "Summary!C10": 54072.45,
+   "Summary!D10": 54072.44999999999,
+   "Summary!C13": 28420.0,
+   "Summary!C21": 28420.0,
+   "Summary!D13": 28420.0,
+   "Summary!C8": 24904.250000000015
+  },
+  "Rates!B10": {
+   "Summary!C24": 417600.00000000023,
+   "Summary!C5": 417600.0,
+   "Summary!C19": 417600.0,
+   "Summary!D5": 417600.0,
+   "Summary!C26": 0.02728698379508626
+  },
+  "Rates!E5": {
+   "Summary!C24": 23515.762499999953,
+   "Summary!C22": 18135.0,
+   "Summary!C16": 11835.0,
+   "Summary!C15": 6300.0,
+   "Summary!D16": 5535.0,
+   "Summary!C10": 5380.762500000012,
+   "Summary!C20": 5380.762500000012,
+   "Summary!D10": 5380.762499999997,
+   "Summary!C26": 0.0015365762219027718
+  },
+  "Rates!E6": {
+   "Summary!C24": 117104.0625,
+   "Summary!C20": 35281.912500000035,
+   "Summary!C6": 32817.15000000002,
+   "Summary!C19": 32817.15000000002,
+   "Summary!C21": 32197.5,
+   "Summary!C10": 21559.162500000006,
+   "Summary!D10": 21559.1625,
+   "Summary!C16": 16807.5,
+   "Summary!C22": 16807.5,
+   "Summary!C11": 16537.50000000003
+  },
+  "Rates!E10": {
+   "Summary!C24": 104400.0,
+   "Summary!C5": 104399.99999999997,
+   "Summary!D5": 104399.99999999997,
+   "Summary!C19": 104399.99999999994,
+   "Summary!C26": 0.0068217459487715515
+  },
+  "Rates!G2": {
+   "Summary!C24": 126786.6000000001,
+   "Summary!C21": 53240.0,
+   "Summary!C19": 51447.20000000001,
+   "Summary!C5": 42000.0,
+   "Summary!D5": 42000.0,
+   "Summary!D11": 28800.000000000015,
+   "Summary!C11": 28800.0,
+   "Summary!C12": 24440.000000000015,
+   "Summary!D8": 16499.4,
+   "Summary!C8": 16499.399999999994
+  },
+  "Rates!G3": {
+   "Summary!C24": 95447.45000000019,
+   "Summary!C21": 39930.0,
+   "Summary!C19": 38942.899999999965,
+   "Summary!C5": 31735.0,
+   "Summary!D5": 31500.0,
+   "Summary!D11": 21600.000000000015,
+   "Summary!C11": 21600.0,
+   "Summary!C12": 18330.000000000015,
+   "Summary!C8": 12374.550000000003,
+   "Summary!D8": 12374.550000000003
+  },
+  "Rates!G4": {
+   "Summary!C24": 126786.6000000001,
+   "Summary!C21": 53240.0,
+   "Summary!C19": 51447.20000000001,
+   "Summary!C5": 42000.0,
+   "Summary!D5": 42000.0,
+   "Summary!D11": 28800.000000000015,
+   "Summary!C11": 28800.0,
+   "Summary!C12": 24440.000000000015,
+   "Summary!C13": 22540.0,
+   "Summary!D9": 21549.800000000003
+  },
+  "Rates!H3": {
+   "Summary!C19": 3217.5,
+   "Summary!C24": 3217.5,
+   "Summary!C5": 2115.0,
+   "Summary!C7": 1102.5,
+   "Summary!D7": 1102.5,
+   "Summary!C26": 0.0002102391531625808
+  },
+  "Rates!H4": {
+   "Summary!C24": 253573.2000000002,
+   "Summary!C21": 106480.0,
+   "Summary!C19": 102894.40000000002,
+   "Summary!C5": 84000.0,
+   "Summary!D5": 84000.0,
+   "Summary!D11": 57600.000000000015,
+   "Summary!C11": 57600.0,
+   "Summary!C12": 48880.000000000015,
+   "Summary!C8": 32998.80000000001,
+   "Summary!D8": 32998.8
+  },
+  "Rates!J2": {
+   "Summary!C5": 307615.0,
+   "Summary!C19": 307615.0,
+   "Summary!C24": 307615.0,
+   "Summary!D5": 306910.0,
+   "Summary!C20": 8313.900000000023,
+   "Summary!C10": 8313.900000000009,
+   "Summary!D10": 8313.900000000001,
+   "Summary!C7": 2275.0,
+   "Summary!D7": 1667.5,
+   "Summary!C26": 0.020100300575013066
+  },
+  "Rates!J6": {
+   "Summary!C24": 43099.60000000009,
+   "Summary!C9": 43099.600000000006,
+   "Summary!D9": 43099.600000000006,
+   "Summary!C20": 43099.59999999998,
+   "Summary!C10": 8313.900000000009,
+   "Summary!D10": 8313.900000000001,
+   "Summary!C26": 0.002816231050705706
+  },
+  "Rates!J8": {
+   "Summary!C11": 148837.5,
+   "Summary!C21": 148837.5,
+   "Summary!C24": 148837.5,
+   "Summary!D11": 105450.00000000001,
+   "Summary!C26": 0.009725398588604287
+  },
+  "Rates!J13": {
+   "Summary!C16": 28782.5,
+   "Summary!C24": 28782.5,
+   "Summary!C22": 28782.499999999985,
+   "Summary!D16": 6765.0,
+   "Summary!C26": 0.0018807174594877157
+  },
+  "Summary!A5": {
+   "Summary!C5": 307615.0,
+   "Summary!C24": 307615.0,
+   "Summary!D5": 306910.0,
+   "Summary!E5": 5.0,
+   "Summary!C26": 0.020100300575013066
+  },
+  "Summary!A9": {
+   "Summary!C24": 130210.75565000018,
+   "Summary!C9": 130210.75565,
+   "Summary!D9": 43099.600000000006,
+   "Summary!E9": 5.0,
+   "Summary!C26": 0.008508282517642449
+  },
+  "Summary!A11": {
+   "Summary!C11": 157688.5,
+   "Summary!C24": 157688.5,
+   "Summary!D11": 105450.00000000001,
+   "Summary!E11": 5.0,
+   "Summary!C26": 0.010303744119184527
+  },
+  "Summary!A16": {
+   "Summary!C16": 82362.50000000001,
+   "Summary!C24": 82362.5,
+   "Summary!D16": 18176.700000000004,
+   "Summary!E16": 5.0,
+   "Summary!C26": 0.005381762937794049
+  },
+  "Summary!A19": {
+   "Summary!C19": 447049.675
+  },
+  "Summary!A20": {
+   "Summary!C20": 352929.57409999997
+  },
+  "Summary!A21": {
+   "Summary!C21": 644374.1625
+  },
+  "Summary!A22": {
+   "Summary!C22": 488887.1625
+  },
+  "adj!A2": {
+   "Summary!C8": 4500.0,
+   "Summary!C24": 4500.0,
+   "Summary!C11": 4500.0,
+   "Summary!C26": 0.0002940407736539419
+  },
+  "adj!A3": {
+   "Summary!C11": 1200.0,
+   "Summary!C24": 1200.0,
+   "Summary!C8": 1200.0,
+   "Summary!C26": 7.84108729743882e-05
+  },
+  "adj!B2": {
+   "Summary!C8": 40500.000000000015,
+   "Summary!C24": 40500.0,
+   "Summary!C26": 0.0026463669628855185
+  },
+  "adj!B3": {
+   "Summary!C11": 10800.0,
+   "Summary!C24": 10800.0,
+   "Summary!C26": 0.0007056978567694661
+  },
+  "Calc!S41": {
+   "Summary!C9": 204038.52000000002,
+   "Summary!C20": 204038.52000000002,
+   "Summary!C24": 204038.52000000002,
+   "Summary!C26": 0.013332365394668061
+  },
+  "Calc!S42": {
+   "Summary!C24": 163529.84475000016,
+   "Summary!C10": 163529.84475000005,
+   "Summary!C20": 163529.84475,
+   "Summary!C26": 0.010685431570177747
+  },
+  "Rates!B3": {
+   "Summary!C24": 12300.0,
+   "Summary!C21": 6560.0,
+   "Summary!C7": 5740.0,
+   "Summary!C19": 5740.0,
+   "Summary!D7": 4120.0,
+   "Summary!C12": 3760.0,
+   "Summary!C11": 2800.0,
+   "Summary!D11": 2800.0,
+   "Summary!C26": 0.0008037114479874652
+  },
+  "Rates!B4": {
+   "Summary!C24": 20300.0,
+   "Summary!C15": 10290.0,
+   "Summary!C22": 10290.0,
+   "Summary!C5": 6440.0,
+   "Summary!C19": 6440.0,
+   "Summary!D5": 6440.0,
+   "Summary!C12": 3570.0,
+   "Summary!C21": 3570.0,
+   "Summary!D12": 3570.0,
+   "Summary!C26": 0.0013264506011500254
+  },
+  "Rates!E2": {
+   "Summary!C5": 587.5,
+   "Summary!C19": 587.5,
+   "Summary!C24": 587.5,
+   "Summary!C26": 3.838865656037582e-05
+  },
+  "Rates!E3": {
+   "Summary!C24": 3843.75,
+   "Summary!C21": 2050.0,
+   "Summary!C7": 1793.75,
+   "Summary!C19": 1793.75,
+   "Summary!D7": 1287.5,
+   "Summary!C12": 1175.0,
+   "Summary!C11": 875.0,
+   "Summary!D11": 875.0,
+   "Summary!C26": 0.00025115982749608634
+  },
+  "Rates!E4": {
+   "Summary!C24": 6525.0,
+   "Summary!C15": 3307.5,
+   "Summary!C22": 3307.5,
+   "Summary!C5": 2070.0,
+   "Summary!C19": 2070.0,
+   "Summary!D5": 2070.0,
+   "Summary!D12": 1147.500000000001,
+   "Summary!C12": 1147.5,
+   "Summary!C21": 1147.5,
+   "Summary!C26": 0.00042635912179822544
+  },
+  "Rates!H2": {
+   "Summary!C24": 24404.59999999986,
+   "Summary!C22": 13020.0,
+   "Summary!C16": 10520.0,
+   "Summary!C20": 10464.600000000035,
+   "Summary!C10": 10464.600000000006,
+   "Summary!D10": 10464.599999999999,
+   "Summary!D16": 4920.0,
+   "Summary!C15": 2500.0,
+   "Summary!C7": 920.0,
+   "Summary!C19": 920.0
+  }
+ },
+ "sweeps": {
+  "Inputs!E2": {
+   "points": [
+    23500,
+    25000,
+    50000,
+    100000,
+    119773,
+    150000,
+    216045,
+    250000,
+    312318,
+    400000,
+    408591,
+    504864,
+    600000,
+    601136,
+    697409,
+    793682,
+    889955,
+    986227,
+    1000000,
+    1082500
+   ],
+   "findings": [
+    {
+     "output": "Summary!C26",
+     "pattern": "non-monotonic",
+     "first_reversal_between": [
+      25000,
+      50000
+     ]
+    }
+   ]
+  },
+  "Inputs!E4": {
+   "points": [
+    23500,
+    25000,
+    50000,
+    100000,
+    119773,
+    150000,
+    216045,
+    250000,
+    312318,
+    400000,
+    408591,
+    504864,
+    600000,
+    601136,
+    697409,
+    793682,
+    889955,
+    986227,
+    1000000,
+    1082500
+   ],
+   "findings": [
+    {
+     "output": "Summary!C26",
+     "pattern": "non-monotonic",
+     "first_reversal_between": [
+      25000,
+      50000
+     ]
+    }
+   ]
+  }
+ },
+ "thresholds": [
+  {
+   "input": "Inputs!E2",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 87001.45922500001,
+    "at_t": 87268.98062500001,
+    "at_t_plus_1": 87269.01272500001
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10109655562431837,
+    "at_t": 0.1011142199550829,
+    "at_t_plus_1": 0.1011142153963792
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 88071.44852500001,
+    "at_t": 88740.23062500001,
+    "at_t_plus_1": 88740.27610000002
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10100044479032211,
+    "at_t": 0.1010445414072804,
+    "at_t_plus_1": 0.1010445377427105
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 91013.93515000002,
+    "at_t": 92351.48062500001,
+    "at_t_plus_1": 92351.53947500001
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10086191871216767,
+    "at_t": 0.10094982752070462,
+    "at_t_plus_1": 0.10094982475352801
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 95293.92177500001,
+    "at_t": 95695.23062500001,
+    "at_t_plus_1": 95695.29215000002
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10081192465028332,
+    "at_t": 0.10083820924397276,
+    "at_t_plus_1": 0.100838206668422
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 101847.66910000001,
+    "at_t": 107866.48062500003,
+    "at_t_plus_1": 107866.56622500002
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 250000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10058233304851165,
+    "at_t": 0.10097407419291853,
+    "at_t_plus_1": 0.10097407319226287
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 120706.39502500002,
+    "at_t": 129266.48062500003,
+    "at_t_plus_1": 129266.58762500003
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 150666.373625,
+    "at_t": 153876.48062500003,
+    "at_t_plus_1": 153876.59297500004
+   }
+  },
+  {
+   "input": "Inputs!E2",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 198816.36827500002,
+    "at_t": 230916.48062500003,
+    "at_t_plus_1": 220216.61437500003
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 139190.9804,
+    "at_t": 139436.0,
+    "at_t_plus_1": 139436.0294
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10101187129861869,
+    "at_t": 0.1010281136613834,
+    "at_t_plus_1": 0.10102810891119379
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 140170.9706,
+    "at_t": 140783.5,
+    "at_t_plus_1": 140783.54165000003
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10090956020984906,
+    "at_t": 0.10095010764698094,
+    "at_t_plus_1": 0.10095010372086179
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 142865.95835000003,
+    "at_t": 144091.0,
+    "at_t_plus_1": 144091.0539
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10075445327995601,
+    "at_t": 0.10083528612247593,
+    "at_t_plus_1": 0.10083528302525517
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 146785.9461,
+    "at_t": 147153.5,
+    "at_t_plus_1": 147153.55635000003
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10068093742968544,
+    "at_t": 0.10070510562352014,
+    "at_t_plus_1": 0.10070510270618897
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 170060.9216,
+    "at_t": 177901.0,
+    "at_t_plus_1": 177901.09800000003
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 197500.902,
+    "at_t": 200441.0,
+    "at_t_plus_1": 200441.1029
+   }
+  },
+  {
+   "input": "Inputs!E4",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 241600.8971,
+    "at_t": 271001.0,
+    "at_t_plus_1": 261201.1225
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 21433.5025,
+    "at_t": 21683.5625,
+    "at_t_plus_1": 21683.6325
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09917770093287975,
+    "at_t": 0.09919462562800462,
+    "at_t_plus_1": 0.09919462365125441
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 23433.4925,
+    "at_t": 24058.5625,
+    "at_t_plus_1": 24058.644999999997
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09914529235131084,
+    "at_t": 0.0991875372380695,
+    "at_t_plus_1": 0.09918753611007598
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 28183.479999999996,
+    "at_t": 29433.5625,
+    "at_t_plus_1": 29433.657499999998
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 34183.4675,
+    "at_t": 34558.5625,
+    "at_t_plus_1": 34558.659999999996
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 67933.44249999999,
+    "at_t": 75933.5625,
+    "at_t_plus_1": 75933.7025
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 103933.42250000002,
+    "at_t": 106933.56250000001,
+    "at_t_plus_1": 106933.7075
+   }
+  },
+  {
+   "input": "Inputs!E5",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 164933.4175,
+    "at_t": 194933.56250000003,
+    "at_t_plus_1": 184933.7275
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 133788.48,
+    "at_t": 134038.5,
+    "at_t_plus_1": 134038.53000000003
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10102206515721947,
+    "at_t": 0.10103869980697551,
+    "at_t_plus_1": 0.10103869507862785
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 134788.47000000003,
+    "at_t": 135413.5,
+    "at_t_plus_1": 135413.5425
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10092069219354721,
+    "at_t": 0.10096221847963321,
+    "at_t_plus_1": 0.10096221459484254
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 137538.45750000002,
+    "at_t": 138788.5,
+    "at_t_plus_1": 138788.55500000002
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10076862601289001,
+    "at_t": 0.10085140909331745,
+    "at_t_plus_1": 0.10085140605659938
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 141538.445,
+    "at_t": 141913.50000000003,
+    "at_t_plus_1": 141913.55750000002
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10070007733844329,
+    "at_t": 0.10072482843091954,
+    "at_t_plus_1": 0.1007248255776074
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 165288.42,
+    "at_t": 173288.5,
+    "at_t_plus_1": 173288.60000000003
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 193288.40000000002,
+    "at_t": 196288.50000000003,
+    "at_t_plus_1": 196288.60500000004
+   }
+  },
+  {
+   "input": "Inputs!E6",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 238288.39500000002,
+    "at_t": 268288.5,
+    "at_t_plus_1": 258288.625
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 107124.69000000002,
+    "at_t": 107374.75000000001,
+    "at_t_plus_1": 107374.82000000002
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072127635929136,
+    "at_t": 0.10073773295806177,
+    "at_t_plus_1": 0.10073773093437811
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 109124.68000000002,
+    "at_t": 109749.75000000001,
+    "at_t_plus_1": 109749.83250000002
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1006872260146724,
+    "at_t": 0.1007283045813067,
+    "at_t_plus_1": 0.10072830338317976
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 113874.66750000001,
+    "at_t": 115124.75000000001,
+    "at_t_plus_1": 115124.84500000002
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 119874.65500000001,
+    "at_t": 120249.75000000001,
+    "at_t_plus_1": 120249.84750000002
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 153624.63,
+    "at_t": 161624.75000000003,
+    "at_t_plus_1": 161624.89
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 189624.61000000004,
+    "at_t": 192624.75000000003,
+    "at_t_plus_1": 192624.89500000002
+   }
+  },
+  {
+   "input": "Inputs!E8",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 250624.60500000004,
+    "at_t": 280624.75000000006,
+    "at_t_plus_1": 270624.91500000004
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 331302.07999999996,
+    "at_t": 331552.1,
+    "at_t_plus_1": 331552.13
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10062683326178141,
+    "at_t": 0.10064375916155904,
+    "at_t_plus_1": 0.10064375437717961
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 332302.06999999995,
+    "at_t": 332927.1,
+    "at_t_plus_1": 332927.14249999996
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10052435660892847,
+    "at_t": 0.1005666086947703,
+    "at_t_plus_1": 0.10056660476883103
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 335052.0575,
+    "at_t": 336302.1,
+    "at_t_plus_1": 336302.15499999997
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10037097697321365,
+    "at_t": 0.1004552020417102,
+    "at_t_plus_1": 0.10045519897879458
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 339052.0449999999,
+    "at_t": 339427.1,
+    "at_t_plus_1": 339427.1575
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10030257353363375,
+    "at_t": 0.10032775433329977,
+    "at_t_plus_1": 0.10032775145712021
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 362802.01999999996,
+    "at_t": 370802.1,
+    "at_t_plus_1": 370802.19999999995
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 390802.0,
+    "at_t": 393802.1,
+    "at_t_plus_1": 393802.20499999996
+   }
+  },
+  {
+   "input": "Inputs!E9",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 435801.995,
+    "at_t": 465802.1,
+    "at_t_plus_1": 455802.225
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 29362.23,
+    "at_t": 29612.25,
+    "at_t_plus_1": 29612.28
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10102412975996641,
+    "at_t": 0.10104058370531306,
+    "at_t_plus_1": 0.10104057902820601
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 30362.22,
+    "at_t": 30987.25,
+    "at_t_plus_1": 30987.2925
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10092385282133909,
+    "at_t": 0.1009649287432628,
+    "at_t_plus_1": 0.1009649249004256
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 33112.2075,
+    "at_t": 34362.25,
+    "at_t_plus_1": 34362.305
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10077342008473665,
+    "at_t": 0.10085530830057653,
+    "at_t_plus_1": 0.10085530529642917
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 37112.195,
+    "at_t": 37487.25,
+    "at_t_plus_1": 37487.3075
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10070559433234913,
+    "at_t": 0.10073007874493928,
+    "at_t_plus_1": 0.10073007592202719
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 60862.17,
+    "at_t": 68862.25,
+    "at_t_plus_1": 68862.35
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 88862.15,
+    "at_t": 91862.25,
+    "at_t_plus_1": 91862.35500000001
+   }
+  },
+  {
+   "input": "Inputs!E10",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 133862.145,
+    "at_t": 163862.25,
+    "at_t_plus_1": 153862.375
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 22744.73,
+    "at_t": 22994.75,
+    "at_t_plus_1": 22994.78
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10131551771986193,
+    "at_t": 0.10133209057692309,
+    "at_t_plus_1": 0.10133208584667867
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 23744.719999999998,
+    "at_t": 24369.75,
+    "at_t_plus_1": 24369.7925
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10121403489665906,
+    "at_t": 0.10125540720953327,
+    "at_t_plus_1": 0.10125540331973498
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 26494.7075,
+    "at_t": 27744.75,
+    "at_t_plus_1": 27744.805
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1010615628150157,
+    "at_t": 0.10114403998020456,
+    "at_t_plus_1": 0.10114403693539843
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 30494.695,
+    "at_t": 30869.75,
+    "at_t_plus_1": 30869.807500000003
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10099230331419293,
+    "at_t": 0.10101696322920094,
+    "at_t_plus_1": 0.10101696036718447
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 54244.67,
+    "at_t": 62244.75,
+    "at_t_plus_1": 62244.850000000006
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 82244.65,
+    "at_t": 85244.75,
+    "at_t_plus_1": 85244.85500000001
+   }
+  },
+  {
+   "input": "Inputs!E11",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 127244.645,
+    "at_t": 157244.75,
+    "at_t_plus_1": 147244.875
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 115833.48000000001,
+    "at_t": 116083.50000000001,
+    "at_t_plus_1": 116083.53000000001
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10092585895410536,
+    "at_t": 0.1009422530027223,
+    "at_t_plus_1": 0.10094224834909324
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 116833.47000000002,
+    "at_t": 117458.50000000001,
+    "at_t_plus_1": 117458.54250000001
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10082610738571057,
+    "at_t": 0.10086703401552115,
+    "at_t_plus_1": 0.10086703019306263
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 119583.45750000002,
+    "at_t": 120833.50000000001,
+    "at_t_plus_1": 120833.55500000002
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10067653866487411,
+    "at_t": 0.1007581302196547,
+    "at_t_plus_1": 0.10075812723273428
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 123583.445,
+    "at_t": 123958.50000000001,
+    "at_t_plus_1": 123958.55750000002
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10060927300883393,
+    "at_t": 0.10063366901330559,
+    "at_t_plus_1": 0.10063366620685996
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 147333.42,
+    "at_t": 155333.5,
+    "at_t_plus_1": 155333.60000000003
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 175333.40000000002,
+    "at_t": 178333.5,
+    "at_t_plus_1": 178333.60500000004
+   }
+  },
+  {
+   "input": "Inputs!E12",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 220333.39500000002,
+    "at_t": 250333.5,
+    "at_t_plus_1": 240333.625
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 116768.48000000001,
+    "at_t": 117018.50000000001,
+    "at_t_plus_1": 117018.53000000001
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10084166356019152,
+    "at_t": 0.10085803398945405,
+    "at_t_plus_1": 0.10085802934804775
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 117768.47000000002,
+    "at_t": 118393.50000000001,
+    "at_t_plus_1": 118393.54250000001
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10074219315581816,
+    "at_t": 0.1007830609096557,
+    "at_t_plus_1": 0.10078305709818808
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 120518.45750000002,
+    "at_t": 121768.50000000001,
+    "at_t_plus_1": 121768.55500000002
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10059311240707314,
+    "at_t": 0.10067458696346512,
+    "at_t_plus_1": 0.10067458398627357
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 124518.445,
+    "at_t": 124893.50000000001,
+    "at_t_plus_1": 124893.55750000002
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1005262139119783,
+    "at_t": 0.10055057505116462,
+    "at_t_plus_1": 0.1005505722541291
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 148268.42,
+    "at_t": 156268.5,
+    "at_t_plus_1": 156268.60000000003
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 176268.40000000002,
+    "at_t": 179268.5,
+    "at_t_plus_1": 179268.60500000004
+   }
+  },
+  {
+   "input": "Inputs!E13",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 221268.39500000002,
+    "at_t": 251268.5,
+    "at_t_plus_1": 241268.625
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 110238.7537,
+    "at_t": 110483.8125,
+    "at_t_plus_1": 110483.8811
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10074880155413585,
+    "at_t": 0.10076503684384941,
+    "at_t_plus_1": 0.1007650347120205
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 112198.7439,
+    "at_t": 112811.3125,
+    "at_t_plus_1": 112811.39335
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10071183140421038,
+    "at_t": 0.10075235730166081,
+    "at_t_plus_1": 0.10075235598475775
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 116853.73165,
+    "at_t": 118078.8125,
+    "at_t_plus_1": 118078.9056
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 122733.7194,
+    "at_t": 123101.3125,
+    "at_t_plus_1": 123101.40805
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 155808.6949,
+    "at_t": 163648.8125,
+    "at_t_plus_1": 163648.9497
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 191088.6753,
+    "at_t": 194028.8125,
+    "at_t_plus_1": 194028.9546
+   }
+  },
+  {
+   "input": "Inputs!E14",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 250868.6704,
+    "at_t": 280268.8125,
+    "at_t_plus_1": 270468.9742
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 112921.3425,
+    "at_t": 113171.36249999999,
+    "at_t_plus_1": 113171.39249999999
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10098683645379909,
+    "at_t": 0.10100341043172625,
+    "at_t_plus_1": 0.10100340572296533
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 113921.33249999999,
+    "at_t": 114546.36249999999,
+    "at_t_plus_1": 114546.405
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10088589094186247,
+    "at_t": 0.100927266015625,
+    "at_t_plus_1": 0.10092726214729462
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 116671.31999999999,
+    "at_t": 117921.36249999999,
+    "at_t_plus_1": 117921.4175
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10073449149627106,
+    "at_t": 0.1008169741256434,
+    "at_t_plus_1": 0.10081697110221913
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 120671.3075,
+    "at_t": 121046.36249999999,
+    "at_t_plus_1": 121046.41999999998
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10066630304961215,
+    "at_t": 0.10069096460799791,
+    "at_t_plus_1": 0.10069096176723481
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 144421.2825,
+    "at_t": 152421.3625,
+    "at_t_plus_1": 152421.4625
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 172421.26249999998,
+    "at_t": 175421.3625,
+    "at_t_plus_1": 175421.4675
+   }
+  },
+  {
+   "input": "Inputs!E15",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 217421.2575,
+    "at_t": 247421.3625,
+    "at_t_plus_1": 237421.4875
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307659.97,
+    "at_t": 307910.0,
+    "at_t_plus_1": 307910.04000000004
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072852873989929,
+    "at_t": 0.10074485811636341,
+    "at_t_plus_1": 0.10074485414753821
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 308909.95999999996,
+    "at_t": 309535.0,
+    "at_t_plus_1": 309535.0525
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10064580323836818,
+    "at_t": 0.10068656768533317,
+    "at_t_plus_1": 0.10068656454215032
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 312159.9475,
+    "at_t": 313410.0,
+    "at_t_plus_1": 313410.065
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10052992255972969,
+    "at_t": 0.10061119117713989,
+    "at_t_plus_1": 0.10061118886179327
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 316659.935,
+    "at_t": 317035.0,
+    "at_t_plus_1": 317035.0675
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1004958012634588,
+    "at_t": 0.10052010148083343,
+    "at_t_plus_1": 0.10052009934090929
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 342909.91000000003,
+    "at_t": 350910.0,
+    "at_t_plus_1": 350910.11
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 372909.89,
+    "at_t": 375910.0,
+    "at_t_plus_1": 375910.115
+   }
+  },
+  {
+   "input": "Inputs!E17",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 421909.885,
+    "at_t": 451910.0,
+    "at_t_plus_1": 441910.135
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 97423.54250000001,
+    "at_t": 97673.56250000001,
+    "at_t_plus_1": 97673.59250000001
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10082093356373077,
+    "at_t": 0.10083728739039394,
+    "at_t_plus_1": 0.10083728275505283
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 98423.53250000002,
+    "at_t": 99048.56250000001,
+    "at_t_plus_1": 99048.60500000001
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072159774100722,
+    "at_t": 0.10076242411315085,
+    "at_t_plus_1": 0.10076242030689095
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 101173.52000000002,
+    "at_t": 102423.56250000001,
+    "at_t_plus_1": 102423.61750000002
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1005727345166852,
+    "at_t": 0.10065412684117993,
+    "at_t_plus_1": 0.1006541238683256
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 105173.5075,
+    "at_t": 105548.56250000001,
+    "at_t_plus_1": 105548.62000000001
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10050596945582978,
+    "at_t": 0.10053030608814176,
+    "at_t_plus_1": 0.10053030329523573
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 128923.48250000001,
+    "at_t": 136923.5625,
+    "at_t_plus_1": 136923.6625
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 156923.46250000002,
+    "at_t": 159923.56250000003,
+    "at_t_plus_1": 159923.6675
+   }
+  },
+  {
+   "input": "Inputs!E18",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 201923.45750000002,
+    "at_t": 231923.5625,
+    "at_t_plus_1": 221923.6875
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7280.8025,
+    "at_t": 7405.8125,
+    "at_t_plus_1": 7405.827499999999
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10081420784996617,
+    "at_t": 0.10082237798999248,
+    "at_t_plus_1": 0.10082237237646777
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7780.797500000001,
+    "at_t": 8093.3125,
+    "at_t_plus_1": 8093.33375
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10068227456703396,
+    "at_t": 0.10070267580239659,
+    "at_t_plus_1": 0.10070267061398958
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 9155.79125,
+    "at_t": 9780.8125,
+    "at_t_plus_1": 9780.84
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10044410486504408,
+    "at_t": 0.10048478054479774,
+    "at_t_plus_1": 0.1004847757942672
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 11155.785,
+    "at_t": 11343.3125,
+    "at_t_plus_1": 11343.341250000001
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10024802923722899,
+    "at_t": 0.10026018917831772,
+    "at_t_plus_1": 0.10026018453886627
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 23030.7725,
+    "at_t": 27030.8125,
+    "at_t_plus_1": 27030.862500000003
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09940613434456759,
+    "at_t": 0.0996615013183516,
+    "at_t_plus_1": 0.09966149814782786
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 37030.7625,
+    "at_t": 38530.8125,
+    "at_t_plus_1": 38530.865000000005
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09903539413971658,
+    "at_t": 0.09912994773536736,
+    "at_t_plus_1": 0.09912994479591862
+   }
+  },
+  {
+   "input": "Inputs!E19",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 59530.76,
+    "at_t": 74530.8125,
+    "at_t_plus_1": 69530.875
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7198.3025,
+    "at_t": 7323.3125,
+    "at_t_plus_1": 7323.327499999999
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10084509041059284,
+    "at_t": 0.10085326348884383,
+    "at_t_plus_1": 0.10085325787127802
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7698.297500000001,
+    "at_t": 8010.8125,
+    "at_t_plus_1": 8010.83375
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10071305929011362,
+    "at_t": 0.10073346785340999,
+    "at_t_plus_1": 0.10073346266112733
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 9073.29125,
+    "at_t": 9698.3125,
+    "at_t_plus_1": 9698.34
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10047470407114885,
+    "at_t": 0.10051539431566611,
+    "at_t_plus_1": 0.10051538956144097
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 11073.285,
+    "at_t": 11260.8125,
+    "at_t_plus_1": 11260.841250000001
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10027845915618244,
+    "at_t": 0.10029062343587748,
+    "at_t_plus_1": 0.10029061879279472
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 22948.2725,
+    "at_t": 26948.3125,
+    "at_t_plus_1": 26948.362500000003
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09943578268845209,
+    "at_t": 0.09969123936007154,
+    "at_t_plus_1": 0.09969123618653492
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 36948.2625,
+    "at_t": 38448.3125,
+    "at_t_plus_1": 38448.365000000005
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09906453997758481,
+    "at_t": 0.09915912636524153,
+    "at_t_plus_1": 0.09915912342293332
+   }
+  },
+  {
+   "input": "Inputs!E22",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 59448.26,
+    "at_t": 74448.3125,
+    "at_t_plus_1": 69448.375
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 109046.13425,
+    "at_t": 109313.65565,
+    "at_t_plus_1": 109313.68775
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10085840637845554,
+    "at_t": 0.10087614512951477,
+    "at_t_plus_1": 0.10087614056740138
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 110116.12354999999,
+    "at_t": 110784.90565,
+    "at_t_plus_1": 110784.95112499999
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10076228565691771,
+    "at_t": 0.10080656772292308,
+    "at_t_plus_1": 0.10080656405870243
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 113058.610175,
+    "at_t": 114396.15565,
+    "at_t_plus_1": 114396.2145
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10062396495488367,
+    "at_t": 0.10071224222962939,
+    "at_t_plus_1": 0.10071223946653646
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 117338.5968,
+    "at_t": 117739.90565,
+    "at_t_plus_1": 117739.967175
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10057454476001083,
+    "at_t": 0.10060093917305352,
+    "at_t_plus_1": 0.10060093660235277
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 123892.344125,
+    "at_t": 129911.15565,
+    "at_t_plus_1": 129911.24125
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 142751.07005,
+    "at_t": 151311.15564999997,
+    "at_t_plus_1": 151311.26265
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 172711.04865,
+    "at_t": 175921.15565,
+    "at_t_plus_1": 175921.26799999998
+   }
+  },
+  {
+   "input": "Inputs!E23",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 220861.04330000002,
+    "at_t": 252961.15565000003,
+    "at_t_plus_1": 242261.2894
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 178364.98,
+    "at_t": 178615.0,
+    "at_t_plus_1": 178615.03
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09883181755873051,
+    "at_t": 0.09884930556993914,
+    "at_t_plus_1": 0.09884930075227061
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 179364.97,
+    "at_t": 179990.0,
+    "at_t_plus_1": 179990.0425
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09872907897660511,
+    "at_t": 0.09877273162196146,
+    "at_t_plus_1": 0.09877272769120372
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 182114.9575,
+    "at_t": 183365.0,
+    "at_t_plus_1": 183365.055
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09857688166343322,
+    "at_t": 0.09866388875817904,
+    "at_t_plus_1": 0.0986638857187884
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 186114.945,
+    "at_t": 186490.0,
+    "at_t_plus_1": 186490.0575
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09851244932106336,
+    "at_t": 0.09853845906631521,
+    "at_t_plus_1": 0.09853845621958543
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 209864.92,
+    "at_t": 217865.0,
+    "at_t_plus_1": 217865.1
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 237864.9,
+    "at_t": 240865.0,
+    "at_t_plus_1": 240865.105
+   }
+  },
+  {
+   "input": "Inputs!E24",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 282864.895,
+    "at_t": 312865.0,
+    "at_t_plus_1": 302865.125
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7515.7978,
+    "at_t": 7638.3125,
+    "at_t_plus_1": 7638.3321
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1007274576533885,
+    "at_t": 0.10073545647543126,
+    "at_t_plus_1": 0.10073545117384662
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 8128.2929,
+    "at_t": 8434.5625,
+    "at_t_plus_1": 8434.588225
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10060313829363547,
+    "at_t": 0.10062311148150566,
+    "at_t_plus_1": 0.10062310659546567
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 9720.786775,
+    "at_t": 10333.3125,
+    "at_t_plus_1": 10333.34435
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10037960859318608,
+    "at_t": 0.10041943077573315,
+    "at_t_plus_1": 0.10041942631709304
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 11925.78065,
+    "at_t": 12109.5625,
+    "at_t_plus_1": 12109.595575
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10019722563012673,
+    "at_t": 0.10020913059174283,
+    "at_t_plus_1": 0.10020912624057772
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 24788.268399999997,
+    "at_t": 28708.3125,
+    "at_t_plus_1": 28708.3664
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.0994199554321038,
+    "at_t": 0.09966996784871485,
+    "at_t_plus_1": 0.09966996492952579
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 39488.2586,
+    "at_t": 40958.3125,
+    "at_t_plus_1": 40958.36885
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09909348643450383,
+    "at_t": 0.0991860586875748,
+    "at_t_plus_1": 0.09918605598992027
+   }
+  },
+  {
+   "input": "Inputs!E25",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 63498.25615,
+    "at_t": 78198.31250000001,
+    "at_t_plus_1": 73298.37865
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 57781.067324999996,
+    "at_t": 57981.708374999995,
+    "at_t_plus_1": 57981.732449999996
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10139389677613826,
+    "at_t": 0.10140717051562087,
+    "at_t_plus_1": 0.10140716539699726
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 58583.55929999999,
+    "at_t": 59085.145874999995,
+    "at_t_plus_1": 59085.179981249996
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1012794214203675,
+    "at_t": 0.10131255994515298,
+    "at_t_plus_1": 0.10131255550410986
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 60790.424268749994,
+    "at_t": 61793.583374999995,
+    "at_t_plus_1": 61793.627512499996
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10109124343904323,
+    "at_t": 0.10115730798590529,
+    "at_t_plus_1": 0.10115730423040215
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 64000.414237499994,
+    "at_t": 64301.395874999995,
+    "at_t_plus_1": 64301.44201874999
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1009701528906094,
+    "at_t": 0.10098990478894505,
+    "at_t_plus_1": 0.10098990118846247
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 68915.72473125,
+    "at_t": 73429.833375,
+    "at_t_plus_1": 73429.897575
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 250000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10063220825268757,
+    "at_t": 0.10092660647948869,
+    "at_t_plus_1": 0.1009266040842233
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 83059.769175,
+    "at_t": 89479.833375,
+    "at_t_plus_1": 89479.913625
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1005707998140412,
+    "at_t": 0.1009854457889298,
+    "at_t_plus_1": 0.10098544444969033
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 105529.753125,
+    "at_t": 107937.333375,
+    "at_t_plus_1": 107937.4176375
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072101496021266,
+    "at_t": 0.100874523825161,
+    "at_t_plus_1": 0.10087452276592343
+   }
+  },
+  {
+   "input": "Inputs!E27",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 141642.24911250002,
+    "at_t": 165717.33337500002,
+    "at_t_plus_1": 157692.43368750002
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 54788.44,
+    "at_t": 55038.5,
+    "at_t_plus_1": 55038.57
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09848418539148371,
+    "at_t": 0.09850129549592718,
+    "at_t_plus_1": 0.0985012935449864
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 56788.43,
+    "at_t": 57413.5,
+    "at_t_plus_1": 57413.582500000004
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09845260724016723,
+    "at_t": 0.09849531405630724,
+    "at_t_plus_1": 0.09849531296328326
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 61538.417499999996,
+    "at_t": 62788.5,
+    "at_t_plus_1": 62788.595
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 67538.405,
+    "at_t": 67913.5,
+    "at_t_plus_1": 67913.5975
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 101288.38,
+    "at_t": 109288.5,
+    "at_t_plus_1": 109288.64000000001
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 137288.36000000002,
+    "at_t": 140288.5,
+    "at_t_plus_1": 140288.64500000002
+   }
+  },
+  {
+   "input": "Inputs!E28",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 198288.355,
+    "at_t": 228288.50000000003,
+    "at_t_plus_1": 218288.665
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 304204.98,
+    "at_t": 304455.0,
+    "at_t_plus_1": 304455.03
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10095461750046712,
+    "at_t": 0.10097101961672246,
+    "at_t_plus_1": 0.1009710149589148
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 305204.97,
+    "at_t": 305830.0,
+    "at_t_plus_1": 305830.0425
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10085476980440111,
+    "at_t": 0.10089571654435854,
+    "at_t_plus_1": 0.10089571271814228
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307954.9575,
+    "at_t": 309205.0,
+    "at_t_plus_1": 309205.055
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10070503422838521,
+    "at_t": 0.10078666574582028,
+    "at_t_plus_1": 0.10078666275557321
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 311954.945,
+    "at_t": 312330.0,
+    "at_t_plus_1": 312330.0575
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10063764298513495,
+    "at_t": 0.10066205089832055,
+    "at_t_plus_1": 0.10066204808865718
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 335704.92000000004,
+    "at_t": 343705.0,
+    "at_t_plus_1": 343705.1
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 363704.9,
+    "at_t": 366705.0,
+    "at_t_plus_1": 366705.105
+   }
+  },
+  {
+   "input": "Inputs!E29",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 408704.895,
+    "at_t": 438705.0,
+    "at_t_plus_1": 428705.125
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7400.8025,
+    "at_t": 7525.8125,
+    "at_t_plus_1": 7525.827499999999
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10076932740622543,
+    "at_t": 0.10077749327623967,
+    "at_t_plus_1": 0.10077748766858512
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7900.797500000001,
+    "at_t": 8213.3125,
+    "at_t_plus_1": 8213.33375
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1006375362423742,
+    "at_t": 0.10065792682831316,
+    "at_t_plus_1": 0.1006579216455359
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 9275.79125,
+    "at_t": 9900.8125,
+    "at_t_plus_1": 9900.84
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10039963601793163,
+    "at_t": 0.10044029053117784,
+    "at_t_plus_1": 0.100440285786014
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 11275.785,
+    "at_t": 11463.3125,
+    "at_t_plus_1": 11463.341250000001
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10020380628368226,
+    "at_t": 0.10021595991959278,
+    "at_t_plus_1": 0.1002159552854161
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 23150.7725,
+    "at_t": 27150.8125,
+    "at_t_plus_1": 27150.862500000003
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09936304663006391,
+    "at_t": 0.09961828324665796,
+    "at_t_plus_1": 0.09961828008051048
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 37150.7625,
+    "at_t": 38650.8125,
+    "at_t_plus_1": 38650.865000000005
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09899303625322346,
+    "at_t": 0.09908754219197935,
+    "at_t_plus_1": 0.09908753925668404
+   }
+  },
+  {
+   "input": "Inputs!E30",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 59650.76,
+    "at_t": 74650.8125,
+    "at_t_plus_1": 69650.875
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 50262.966425,
+    "at_t": 50530.53062500001,
+    "at_t_plus_1": 50530.605525
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.09996066929840194,
+    "at_t": 0.09997856766487101,
+    "at_t_plus_1": 0.09997856598664528
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 52402.955725,
+    "at_t": 53071.78062500001,
+    "at_t_plus_1": 53071.86890000001
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 57485.442350000005,
+    "at_t": 58823.03062500001,
+    "at_t_plus_1": 58823.132275
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 63905.42897500001,
+    "at_t": 64306.78062500001,
+    "at_t_plus_1": 64306.88495
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 74739.17630000002,
+    "at_t": 80758.03062500001,
+    "at_t_plus_1": 80758.15902500002
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 100017.90222500001,
+    "at_t": 108578.03062500003,
+    "at_t_plus_1": 108578.18042500003
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 138537.88082500003,
+    "at_t": 141748.030625,
+    "at_t_plus_1": 141748.18577500002
+   }
+  },
+  {
+   "input": "Inputs!E31",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 203807.87547500004,
+    "at_t": 235908.03062500004,
+    "at_t_plus_1": 225208.20717500005
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 157138.48,
+    "at_t": 157388.5,
+    "at_t_plus_1": 157388.53
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10076536593862731,
+    "at_t": 0.10078170693736106,
+    "at_t_plus_1": 0.10078170230929107
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 158138.47,
+    "at_t": 158763.5,
+    "at_t_plus_1": 158763.5425
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10066619861389114,
+    "at_t": 0.10070699300868204,
+    "at_t_plus_1": 0.10070698920902219
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 160888.4575,
+    "at_t": 162138.5,
+    "at_t_plus_1": 162138.555
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10051763185097481,
+    "at_t": 0.10059896062853797,
+    "at_t_plus_1": 0.10059895766159425
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 164888.445,
+    "at_t": 165263.5,
+    "at_t_plus_1": 165263.5575
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10045109743505398,
+    "at_t": 0.10047541513068294,
+    "at_t_plus_1": 0.10047541234351046
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 188638.42,
+    "at_t": 196638.5,
+    "at_t_plus_1": 196638.6
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 216638.4,
+    "at_t": 219638.5,
+    "at_t_plus_1": 219638.605
+   }
+  },
+  {
+   "input": "Inputs!E32",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 261638.39500000002,
+    "at_t": 291638.5,
+    "at_t_plus_1": 281638.625
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 95626.00250000002,
+    "at_t": 95876.06250000001,
+    "at_t_plus_1": 95876.13250000002
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072967447504089,
+    "at_t": 0.1007460352074879,
+    "at_t_plus_1": 0.10074603319504953
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 97625.99250000002,
+    "at_t": 98251.06250000001,
+    "at_t_plus_1": 98251.14500000002
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10069580844251509,
+    "at_t": 0.10073664810167941,
+    "at_t_plus_1": 0.10073664690997539
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 102375.98000000001,
+    "at_t": 103626.06250000001,
+    "at_t_plus_1": 103626.15750000002
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 108375.96750000001,
+    "at_t": 108751.06250000001,
+    "at_t_plus_1": 108751.16000000002
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 142125.9425,
+    "at_t": 150126.06250000003,
+    "at_t_plus_1": 150126.2025
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 178125.92250000004,
+    "at_t": 181126.06250000003,
+    "at_t_plus_1": 181126.20750000002
+   }
+  },
+  {
+   "input": "Inputs!E33",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 239125.91750000004,
+    "at_t": 269126.06250000006,
+    "at_t_plus_1": 259126.22750000004
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 61402.348574999996,
+    "at_t": 61602.989624999995,
+    "at_t_plus_1": 61603.013699999996
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10115153316874397,
+    "at_t": 0.1011647439657444,
+    "at_t_plus_1": 0.10116473888736897
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 62204.84054999999,
+    "at_t": 62706.427124999995,
+    "at_t_plus_1": 62706.461231249996
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10103799837967763,
+    "at_t": 0.10107098,
+    "at_t_plus_1": 0.10107097559587468
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 64411.705518749994,
+    "at_t": 65414.864624999995,
+    "at_t_plus_1": 65414.908762499996
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10085149984564076,
+    "at_t": 0.10091725259914783,
+    "at_t_plus_1": 0.10091724887710594
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 67621.6954875,
+    "at_t": 67922.677125,
+    "at_t_plus_1": 67922.72326874999
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10073176216885085,
+    "at_t": 0.10075142116301863,
+    "at_t_plus_1": 0.10075141759505603
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 72537.00598125,
+    "at_t": 77051.114625,
+    "at_t_plus_1": 77051.178825
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 250000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10039694450848391,
+    "at_t": 0.10068996679000325,
+    "at_t_plus_1": 0.1006899644212941
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 86681.050425,
+    "at_t": 93101.114625,
+    "at_t_plus_1": 93101.194875
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10033808900919891,
+    "at_t": 0.10075081571198972,
+    "at_t_plus_1": 0.10075081439403315
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 109151.034375,
+    "at_t": 111558.614625,
+    "at_t_plus_1": 111558.6988875
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10049057179565675,
+    "at_t": 0.10064337914312917,
+    "at_t_plus_1": 0.10064337810340349
+   }
+  },
+  {
+   "input": "Inputs!E34",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 145263.53036250002,
+    "at_t": 169338.61462500002,
+    "at_t_plus_1": 161313.71493750002
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 30297.23,
+    "at_t": 30547.25,
+    "at_t_plus_1": 30547.28
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1009726757117372,
+    "at_t": 0.10098911126529003,
+    "at_t_plus_1": 0.1009891065967969
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 31297.22,
+    "at_t": 31922.25,
+    "at_t_plus_1": 31922.2925
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1008725951528196,
+    "at_t": 0.10091362523143589,
+    "at_t_plus_1": 0.10091362139625623
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 34047.2075,
+    "at_t": 35297.25,
+    "at_t_plus_1": 35297.305
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10072249748854771,
+    "at_t": 0.10080429460768275,
+    "at_t_plus_1": 0.10080429161021585
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 38047.195,
+    "at_t": 38422.25,
+    "at_t_plus_1": 38422.3075
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10065491302295436,
+    "at_t": 0.10067937028895703,
+    "at_t_plus_1": 0.10067936747248274
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 61797.17,
+    "at_t": 69797.25,
+    "at_t_plus_1": 69797.35
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 89797.15,
+    "at_t": 92797.25,
+    "at_t_plus_1": 92797.35500000001
+   }
+  },
+  {
+   "input": "Inputs!E35",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 134797.145,
+    "at_t": 164797.25,
+    "at_t_plus_1": 154797.375
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 135864.94,
+    "at_t": 136115.0,
+    "at_t_plus_1": 136115.07
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.0959384734111964,
+    "at_t": 0.09595597912318792,
+    "at_t_plus_1": 0.09595597730541514
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 137864.93,
+    "at_t": 138490.0,
+    "at_t_plus_1": 138490.0825
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 142614.9175,
+    "at_t": 143865.0,
+    "at_t_plus_1": 143865.095
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 148614.905,
+    "at_t": 148990.0,
+    "at_t_plus_1": 148990.0975
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 182364.88,
+    "at_t": 190365.0,
+    "at_t_plus_1": 190365.14
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 218364.86000000002,
+    "at_t": 221365.0,
+    "at_t_plus_1": 221365.14500000002
+   }
+  },
+  {
+   "input": "Inputs!E36",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 279364.855,
+    "at_t": 309365.0,
+    "at_t_plus_1": 299365.16500000004
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 374312.07999999996,
+    "at_t": 374562.1,
+    "at_t_plus_1": 374562.13
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1012661791856779,
+    "at_t": 0.10128273338411606,
+    "at_t_plus_1": 0.10128272866246746
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 375312.06999999995,
+    "at_t": 375937.1,
+    "at_t_plus_1": 375937.14249999996
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1011648920159299,
+    "at_t": 0.10120621782171671,
+    "at_t_plus_1": 0.10120621393954413
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 378062.0575,
+    "at_t": 379312.1,
+    "at_t_plus_1": 379312.15499999997
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10101275272955133,
+    "at_t": 0.1010951374835223,
+    "at_t_plus_1": 0.10109513444535102
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 382062.0449999999,
+    "at_t": 382437.1,
+    "at_t_plus_1": 382437.1575
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10094373090551378,
+    "at_t": 0.10096836328340561,
+    "at_t_plus_1": 0.1009683604277782
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 405812.01999999996,
+    "at_t": 413812.1,
+    "at_t_plus_1": 413812.19999999995
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 433812.0,
+    "at_t": 436812.1,
+    "at_t_plus_1": 436812.20499999996
+   }
+  },
+  {
+   "input": "Inputs!E37",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 478811.995,
+    "at_t": 508812.1,
+    "at_t_plus_1": 498812.225
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 109345.73425,
+    "at_t": 109613.25565,
+    "at_t_plus_1": 109613.28775
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1008548647360478,
+    "at_t": 0.10087259936998476,
+    "at_t_plus_1": 0.10087259480916541
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 110415.72355,
+    "at_t": 111084.50565,
+    "at_t_plus_1": 111084.551125
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10075877215034243,
+    "at_t": 0.10080304395524366,
+    "at_t_plus_1": 0.10080304029210538
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 113358.210175,
+    "at_t": 114695.75565,
+    "at_t_plus_1": 114695.81450000001
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10062049498782467,
+    "at_t": 0.10070875187409266,
+    "at_t_plus_1": 0.1007087491118682
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 117638.1968,
+    "at_t": 118039.50565,
+    "at_t_plus_1": 118039.567175
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10057109758097195,
+    "at_t": 0.10059748591817944,
+    "at_t_plus_1": 0.10059748334829759
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 124191.94412500001,
+    "at_t": 130210.75565,
+    "at_t_plus_1": 130210.84125
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 143050.67005000002,
+    "at_t": 151610.75565,
+    "at_t_plus_1": 151610.86265
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 173010.64865,
+    "at_t": 176220.75565,
+    "at_t_plus_1": 176220.86800000002
+   }
+  },
+  {
+   "input": "Inputs!E38",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 221160.6433,
+    "at_t": 253260.75565,
+    "at_t_plus_1": 242560.88940000004
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 25000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 59811.39232499999,
+    "at_t": 60012.033375,
+    "at_t_plus_1": 60012.05744999999
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 25000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10123345547343292,
+    "at_t": 0.10124669067779832,
+    "at_t_plus_1": 0.10124668558463006
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 50000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 60613.88429999999,
+    "at_t": 61115.470875,
+    "at_t_plus_1": 61115.50498124999
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 50000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10111957627953985,
+    "at_t": 0.10115261874217567,
+    "at_t_plus_1": 0.10115261432454607
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 100000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 62820.74926875,
+    "at_t": 63823.908375,
+    "at_t_plus_1": 63823.95251249999
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 100000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10093246693217424,
+    "at_t": 0.10099834058908518,
+    "at_t_plus_1": 0.10099833685487379
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 150000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 66030.73923749999,
+    "at_t": 66331.720875,
+    "at_t_plus_1": 66331.76701875
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 150000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10081224480099135,
+    "at_t": 0.1008319398213,
+    "at_t_plus_1": 0.10083193624152738
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 250000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 70946.04973125,
+    "at_t": 75460.158375,
+    "at_t_plus_1": 75460.222575
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 250000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10047629407443222,
+    "at_t": 0.10076984991545815,
+    "at_t_plus_1": 0.10076984753724084
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 400000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 85090.09417499999,
+    "at_t": 91510.158375,
+    "at_t_plus_1": 91510.238625
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 400000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.1004165658766385,
+    "at_t": 0.10083003684871515,
+    "at_t_plus_1": 0.10083003552327975
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 600000.0,
+   "kind": "step at T (behaves like >=)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 107560.078125,
+    "at_t": 109967.658375,
+    "at_t_plus_1": 109967.74263749999
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 600000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C26",
+    "at_t_minus_1": 0.10056832215097107,
+    "at_t": 0.10072140154829275,
+    "at_t_plus_1": 0.10072140050175492
+   }
+  },
+  {
+   "input": "Inputs!E39",
+   "threshold": 1000000.0,
+   "kind": "reversal",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 143672.5741125,
+    "at_t": 167747.658375,
+    "at_t_plus_1": 159722.75868750003
+   }
+  },
+  {
+   "input": "Inputs!H2",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 98156.23062500001,
+    "at_t": 98156.23062500001,
+    "at_t_plus_1": 97922.43562500001
+   }
+  },
+  {
+   "input": "Inputs!H4",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 158076.0,
+    "at_t": 158076.0,
+    "at_t_plus_1": 157688.5
+   }
+  },
+  {
+   "input": "Inputs!H5",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 98333.56250000001,
+    "at_t": 98333.56250000001,
+    "at_t_plus_1": 96765.56250000001
+   }
+  },
+  {
+   "input": "Inputs!H6",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 157688.5,
+    "at_t": 157688.5,
+    "at_t_plus_1": 157200.5
+   }
+  },
+  {
+   "input": "Inputs!H8",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 118924.75000000001,
+    "at_t": 118924.75000000001,
+    "at_t_plus_1": 118658.75000000001
+   }
+  },
+  {
+   "input": "Inputs!H9",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 387152.1,
+    "at_t": 387152.1,
+    "at_t_plus_1": 386025.1
+   }
+  },
+  {
+   "input": "Inputs!H10",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 36562.25,
+    "at_t": 36562.25,
+    "at_t_plus_1": 36408.25
+   }
+  },
+  {
+   "input": "Inputs!H11",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 36562.25,
+    "at_t": 36562.25,
+    "at_t_plus_1": 36275.9
+   }
+  },
+  {
+   "input": "Inputs!H12",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 118924.75000000001,
+    "at_t": 118924.75000000001,
+    "at_t_plus_1": 118852.92500000002
+   }
+  },
+  {
+   "input": "Inputs!H13",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C15",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C15",
+    "at_t_minus_1": 118924.75000000001,
+    "at_t": 118924.75000000001,
+    "at_t_plus_1": 118871.62500000001
+   }
+  },
+  {
+   "input": "Inputs!H14",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 132266.3125,
+    "at_t": 132266.3125,
+    "at_t_plus_1": 131796.3625
+   }
+  },
+  {
+   "input": "Inputs!H15",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C6",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C6",
+    "at_t_minus_1": 131796.3625,
+    "at_t": 131796.3625,
+    "at_t_plus_1": 131408.8625
+   }
+  },
+  {
+   "input": "Inputs!H17",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307615.0,
+    "at_t": 307615.0,
+    "at_t_plus_1": 307600.9
+   }
+  },
+  {
+   "input": "Inputs!H18",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 98333.56250000001,
+    "at_t": 98333.56250000001,
+    "at_t_plus_1": 98305.36250000002
+   }
+  },
+  {
+   "input": "Inputs!H19",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7638.3125,
+    "at_t": 7638.3125,
+    "at_t_plus_1": 7626.1625
+   }
+  },
+  {
+   "input": "Inputs!H22",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7638.3125,
+    "at_t": 7638.3125,
+    "at_t_plus_1": 7624.5125
+   }
+  },
+  {
+   "input": "Inputs!H23",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 130210.75565,
+    "at_t": 130210.75565,
+    "at_t_plus_1": 129776.76365000001
+   }
+  },
+  {
+   "input": "Inputs!H24",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307615.0,
+    "at_t": 307615.0,
+    "at_t_plus_1": 305020.0
+   }
+  },
+  {
+   "input": "Inputs!H25",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7648.3125,
+    "at_t": 7648.3125,
+    "at_t_plus_1": 7638.3125
+   }
+  },
+  {
+   "input": "Inputs!H27",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 67577.60212499999,
+    "at_t": 67577.60212499999,
+    "at_t_plus_1": 67373.64675
+   }
+  },
+  {
+   "input": "Inputs!H28",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 157688.5,
+    "at_t": 157688.5,
+    "at_t_plus_1": 155600.5
+   }
+  },
+  {
+   "input": "Inputs!H29",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307615.0,
+    "at_t": 307615.0,
+    "at_t_plus_1": 307536.8
+   }
+  },
+  {
+   "input": "Inputs!H30",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C7",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!D7"
+   ],
+   "example": {
+    "output": "Summary!C7",
+    "at_t_minus_1": 7638.3125,
+    "at_t": 7638.3125,
+    "at_t_plus_1": 7628.5625
+   }
+  },
+  {
+   "input": "Inputs!H31",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C8",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D8"
+   ],
+   "example": {
+    "output": "Summary!C8",
+    "at_t_minus_1": 98156.23062500001,
+    "at_t": 98156.23062500001,
+    "at_t_plus_1": 97166.26662500002
+   }
+  },
+  {
+   "input": "Inputs!H32",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C11",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D11"
+   ],
+   "example": {
+    "output": "Summary!C11",
+    "at_t_minus_1": 157688.5,
+    "at_t": 157688.5,
+    "at_t_plus_1": 157667.5
+   }
+  },
+  {
+   "input": "Inputs!H33",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C12",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D12"
+   ],
+   "example": {
+    "output": "Summary!C12",
+    "at_t_minus_1": 98333.56250000001,
+    "at_t": 98333.56250000001,
+    "at_t_plus_1": 98249.41250000002
+   }
+  },
+  {
+   "input": "Inputs!H34",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 67577.60212499999,
+    "at_t": 67577.60212499999,
+    "at_t_plus_1": 67446.072375
+   }
+  },
+  {
+   "input": "Inputs!H35",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C16",
+    "Summary!C22",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D16"
+   ],
+   "example": {
+    "output": "Summary!C16",
+    "at_t_minus_1": 36562.25,
+    "at_t": 36562.25,
+    "at_t_plus_1": 36426.95
+   }
+  },
+  {
+   "input": "Inputs!H36",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C5",
+    "Summary!C19",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D5"
+   ],
+   "example": {
+    "output": "Summary!C5",
+    "at_t_minus_1": 307615.0,
+    "at_t": 307615.0,
+    "at_t_plus_1": 304150.0
+   }
+  },
+  {
+   "input": "Inputs!H37",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C13",
+    "Summary!C21",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D13"
+   ],
+   "example": {
+    "output": "Summary!C13",
+    "at_t_minus_1": 387152.1,
+    "at_t": 387152.1,
+    "at_t_plus_1": 386885.29999999993
+   }
+  },
+  {
+   "input": "Inputs!H38",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C9",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D9"
+   ],
+   "example": {
+    "output": "Summary!C9",
+    "at_t_minus_1": 130210.75565,
+    "at_t": 130210.75565,
+    "at_t_plus_1": 129782.75565
+   }
+  },
+  {
+   "input": "Inputs!H39",
+   "threshold": 90.0,
+   "kind": "step just above T (behaves like >)",
+   "outputs": [
+    "Summary!C10",
+    "Summary!C20",
+    "Summary!C24",
+    "Summary!C26",
+    "Summary!D10"
+   ],
+   "example": {
+    "output": "Summary!C10",
+    "at_t_minus_1": 67577.60212499999,
+    "at_t": 67577.60212499999,
+    "at_t_plus_1": 67414.25325
+   }
+  }
+ ]
+}

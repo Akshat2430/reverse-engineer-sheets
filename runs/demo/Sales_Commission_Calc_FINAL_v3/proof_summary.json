@@ -1,0 +1,37 @@
+{
+ "engine": {
+  "version": "16.114.2",
+  "platform": "Darwin",
+  "closed_stale": [],
+  "engine": "excel (via bridge)",
+  "locale": "en_IN",
+  "iteration": {
+   "on": false,
+   "count": 100,
+   "delta": 0.001
+  },
+  "books": [],
+  "bridge": true,
+  "allowed_root": "runs"
+ },
+ "today": "2026-10-28",
+ "probe_date": "2026-10-28",
+ "tolerance": 1e-06,
+ "cases": 3000,
+ "outputs": 43,
+ "excel_cases": 301,
+ "replay_cases": 2699,
+ "excel_pass_rate": 1.0,
+ "replay_pass_rate": 1.0,
+ "pass_rate": 1.0,
+ "outputs_all_pass": 43,
+ "outputs_failing": {},
+ "rounding_only": [],
+ "failing_input_blocks": {},
+ "case_kinds": {
+  "saved inputs": 1,
+  "random": 300,
+  "replay": 2699
+ },
+ "resets_after_circular_errors": 0
+}

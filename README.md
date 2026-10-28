@@ -29,6 +29,12 @@ Your original file is never touched; everything happens on a copy in `runs/`. Ex
 
 Workbook contents are sent to the model provider. Don't run it on a confidential file outside an approved environment.
 
+## See a finished run
+
+[`runs/demo/Sales_Commission_Calc_FINAL_v3/`](runs/demo/Sales_Commission_Calc_FINAL_v3/) is a complete run on one of the sample workbooks: the report ([`REPORT.md`](runs/demo/Sales_Commission_Calc_FINAL_v3/REPORT.md), or download `REPORT.html`), the evidence ledger, the Python rebuild and the proof.
+
+![The top of the demo report](docs/demo_report.png)
+
 ## What it does
 
 | Stage | What happens |
@@ -59,6 +65,7 @@ We haven't yet published a measure of how many problems it finds, because the on
 | `sheetre/` | The toolkit the skill drives: inventory, map, probe, prove, report, and `excelfn` (Excel's lookup, rounding and date behaviour in Python) |
 | `tests/` | Toolkit tests (`.venv/bin/python -m pytest`) |
 | `samples/` | The three test workbooks and a clean control workbook |
+| `runs/demo/` | One finished run, so you can see the output without running anything |
 | `scoring/`, `docs/` | How the skill was measured; you don't need these to use it |
 
 ## License
