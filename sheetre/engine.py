@@ -36,6 +36,9 @@ class EngineBusy(EngineError):
 
 
 EXCEL_LOCK = os.environ.get("SHEETRE_EXCEL_LOCK", "/tmp/sheetre-excel.lock")
+# macOS Excel is sandboxed: every new file outside its container raises a "Grant File Access" dialog
+# (folder grants don't stick), so Excel's working copies live inside the container instead
+EXCEL_HOME = Path.home() / "Library/Containers/com.microsoft.Excel/Data/sheetre"
 
 
 def _acquire_excel_lock():
@@ -324,6 +327,8 @@ class ExcelEngine:
     def open(self, path, work_dir):
         """Copy path into work_dir (ASCII name) and open the copy. Returns a Book."""
         work_dir = Path(work_dir)
+        if platform.system() == "Darwin":
+            work_dir = EXCEL_HOME / f"{work_dir.resolve().parent.name}_{work_dir.name}"
         work_dir.mkdir(parents=True, exist_ok=True)
         n = len(list(work_dir.glob("engine_*")))
         dst = work_dir / f"engine_{n}_{safe_name(Path(path).name)}"

@@ -209,8 +209,9 @@ def run(run_dir, engine, work_file, n=200, seed=1, tol=0.005, log=print):
         for case in cases:
             ch = case["changes"]
             if case["source"] == "excel":
-                restore = {c: _to_json(base[c]) for c in prev if c not in ch}
-                engine.set(book, {**restore, **{c: _to_json(v) for c, v in ch.items()}})
+                # write the whole input state: Excel takes one call per contiguous run of cells, so
+                # scattered changes plus restores cost ~3x more than rewriting every input
+                engine.set(book, {c: _to_json(v) for c, v in {**base, **ch}.items()})
                 engine.calc(book)
                 xl = engine.get(book, outputs)
                 prev = ch

@@ -144,6 +144,9 @@ def cmd_try(a):
     for item in a.set or []:
         cell, _, val = item.partition("=")
         changes[cell.strip()] = _parse_value(val)
+    ranges = [g for g in a.get or [] if ":" in g]
+    if ranges:   # a range sent to Excel hangs the bridge for the rest of the session
+        raise SystemExit(f"try --get takes single cells, not ranges: {ranges}. Repeat --get per cell.")
     watch = list(dict.fromkeys((a.get or []) + graph["outputs"]))
     eng = _engine(a)
     try:
