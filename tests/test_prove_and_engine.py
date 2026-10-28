@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 from sheetre import prove
-from sheetre.engine import BridgeEngine, EngineUnavailable, ExcelEngine, get_engine
+from sheetre.engine import BridgeEngine, EngineBusy, EngineUnavailable, ExcelEngine, get_engine
 from sheetre.excelfn import NA
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,7 +34,7 @@ def test_engine_roundtrip_on_control():
     shutil.rmtree(work, ignore_errors=True)
     try:
         eng = ExcelEngine().start()
-    except EngineUnavailable as e:
+    except (EngineUnavailable, EngineBusy) as e:
         pytest.skip(f"Excel can't be driven directly here: {e}")
     try:
         book = eng.open(CONTROL, work)
@@ -68,6 +68,8 @@ def test_bridge_roundtrip_and_path_guard():
     shutil.copy(CONTROL, src)
     eng = BridgeEngine().start()
     try:
+        with pytest.raises(EngineBusy):                         # one stage at a time
+            BridgeEngine().start()
         with pytest.raises(Exception, match="only opens workbooks under"):
             eng.open(CONTROL, work)                            # outside runs/: refused
         book = eng.open(src, work)

@@ -31,6 +31,28 @@ class EngineBlocked(EngineError):
     pass
 
 
+class EngineBusy(EngineError):
+    pass
+
+
+EXCEL_LOCK = os.environ.get("SHEETRE_EXCEL_LOCK", "/tmp/sheetre-excel.lock")
+
+
+def _acquire_excel_lock():
+    """One stage drives Excel at a time; a second gets EngineBusy at once instead of corrupting the first."""
+    try:
+        import fcntl
+    except ImportError:                      # Windows: COM serialises calls; skip the advisory lock
+        return None
+    f = open(EXCEL_LOCK, "w")
+    try:
+        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        f.close()
+        raise EngineBusy("Excel is busy with another stage (probe, try or prove). Wait for it to finish, then run this stage.")
+    return f
+
+
 def safe_name(name):
     stem, ext = os.path.splitext(name)
     return "".join(ch if ch.isalnum() else "_" for ch in stem)[:60] + ext
@@ -186,6 +208,8 @@ def _excel_worker(conn):
         if cmd == "macro":
             path, name, margs = args
             return dict(result=books[path].macro(name)(*margs))
+        if cmd == "ping":
+            return dict(version=str(app.version), books=[b.name for b in app.books])
         if cmd == "close":
             path = args[0]
             b = books.pop(path, None)
@@ -220,10 +244,12 @@ class Book:
 class ExcelEngine:
     name = "excel"
 
-    def __init__(self, timeout=120):
+    def __init__(self, timeout=120, lock=True):
         self.timeout = timeout
         self.proc = self.conn = None
         self.info = {}
+        self.use_lock = lock
+        self._lockf = None
 
     @staticmethod
     def detect():
@@ -266,6 +292,8 @@ class ExcelEngine:
         ok, why = self.detect()
         if not ok:
             raise EngineUnavailable(why)
+        if self.use_lock:
+            self._lockf = _acquire_excel_lock()
         ctx = mp.get_context("spawn")
         self.conn, child = ctx.Pipe()
         self.proc = ctx.Process(target=_excel_worker, args=(child,), daemon=True)
@@ -327,6 +355,10 @@ class ExcelEngine:
         except EngineError:
             pass
 
+    def ping(self):
+        res = self._call("ping", timeout=30)
+        return dict(self.info, **res)
+
     def stop(self):
         if self.proc is not None and self.proc.is_alive():
             try:
@@ -337,6 +369,9 @@ class ExcelEngine:
             if self.proc.is_alive():
                 self.proc.terminate()
         self.proc = None
+        if self._lockf is not None:
+            self._lockf.close()
+            self._lockf = None
 
 
 class LibreOfficeEngine:
@@ -385,6 +420,8 @@ class BridgeEngine:
             raise EngineError("bridge closed the connection")
         res = json.loads(line)
         if not res["ok"]:
+            if res.get("busy"):
+                raise EngineBusy(res["error"])
             raise (EngineBlocked if res.get("blocked") else EngineError)(f"bridge '{cmd}': {res['error']}")
         return res["result"]
 

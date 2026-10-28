@@ -42,35 +42,63 @@ def _inside(path):
 
 
 class Handler(socketserver.StreamRequestHandler):
+    """One client (one stage: probe, try or prove) at a time. A second client is refused at once,
+    because two stages driving the same Excel interleave and corrupt each other."""
     engine = None
-    books = {}
-    lock = threading.Lock()
+    session = threading.Lock()     # held for a whole client connection
+    lock = threading.Lock()        # held per request
 
     def handle(self):
-        for line in self.rfile:
-            try:
-                req = json.loads(line)
-                with self.lock:
-                    res = self.dispatch(req.get("cmd"), req.get("args", {}))
-                out = {"ok": True, "result": res}
-            except Exception as e:
-                out = {"ok": False, "error": f"{type(e).__name__}: {e}", "blocked": "EngineBlocked" in type(e).__name__}
-            self.wfile.write((json.dumps(out, default=str) + "\n").encode())
-            self.wfile.flush()
+        if not Handler.session.acquire(blocking=False):
+            self._send({"ok": False, "busy": True, "error": "EngineBusy: Excel is busy with another stage (probe, try or "
+                        "prove). Wait for it to finish, then run this stage."})
+            return
+        self.books = {}
+        try:
+            for line in self.rfile:
+                try:
+                    req = json.loads(line)
+                    with Handler.lock:
+                        res = self.dispatch(req.get("cmd"), req.get("args", {}))
+                    out = {"ok": True, "result": res}
+                except Exception as e:
+                    out = {"ok": False, "error": f"{type(e).__name__}: {e}", "blocked": "EngineBlocked" in type(e).__name__}
+                self._send(out)
+        finally:
+            for book in list(self.books.values()):      # client went away mid-stage: don't leave books open
+                try:
+                    Handler.engine.close(book)
+                except Exception:
+                    pass
+            Handler.session.release()
+
+    def _send(self, out):
+        self.wfile.write((json.dumps(out, default=str) + "\n").encode())
+        self.wfile.flush()
+
+    @staticmethod
+    def _ensure_engine():
+        eng = Handler.engine
+        if eng is None or eng.proc is None or not eng.proc.is_alive():
+            if eng is not None:
+                eng.stop()
+            Handler.engine = ExcelEngine().start()   # restart a dead worker; closes stale engine_* books
+            print("sheetre bridge: Excel worker (re)started", flush=True)
+        return Handler.engine
 
     def dispatch(self, cmd, a):
-        eng = Handler.engine
+        eng = self._ensure_engine()
         if cmd == "hello":
-            return dict(eng.info, bridge=True, allowed_root=str(ALLOWED))
+            return dict(eng.ping(), bridge=True, allowed_root=str(ALLOWED))
         if cmd == "open":
             if not (_inside(a["path"]) and _inside(a["work_dir"])):
                 raise PermissionError(f"bridge only opens workbooks under {ALLOWED}")
             if Path(a["path"]).suffix.lower() not in (".xlsx", ".xlsm", ".xltx", ".xltm"):
                 raise PermissionError("bridge only opens Excel workbooks")
             book = eng.open(a["path"], a["work_dir"])
-            Handler.books[book.path] = book
+            self.books[book.path] = book
             return dict(path=book.path, iteration=eng.info.get("iteration"))
-        book = Handler.books.get(a.get("book"))
+        book = self.books.get(a.get("book"))
         if book is None:
             raise EngineError("unknown book (open it first)")
         if cmd == "set":
@@ -83,7 +111,7 @@ class Handler(socketserver.StreamRequestHandler):
             return {k: encode(v) for k, v in eng.get(book, a["cells"]).items()}
         if cmd == "close":
             eng.close(book)
-            Handler.books.pop(book.path, None)
+            self.books.pop(book.path, None)
             return {}
         raise EngineError(f"command not allowed over the bridge: {cmd}")
 
@@ -110,7 +138,8 @@ def main():
         except KeyboardInterrupt:
             pass
         finally:
-            Handler.engine.stop()
+            if Handler.engine:
+                Handler.engine.stop()
             if os.path.exists(SOCKET):
                 os.unlink(SOCKET)
 

@@ -11,7 +11,8 @@
     python -m sheetre.cli status <run>
     python -m sheetre.cli engine-check
 
-Exit codes: 0 ok, 1 error, 3 no recalculation engine (Probe/Prove must be marked UNKNOWN).
+Exit codes: 0 ok, 1 error, 2 proof below 100%, 3 no recalculation engine (Probe/Prove must be marked UNKNOWN),
+4 Excel busy with another stage (wait for it, then rerun).
 """
 import argparse
 import datetime as dt
@@ -69,9 +70,12 @@ def cmd_map(a):
 
 
 def _engine(a):
-    from .engine import EngineUnavailable, get_engine
+    from .engine import EngineBusy, EngineUnavailable, get_engine
     try:
         return get_engine(prefer=getattr(a, "engine", None))
+    except EngineBusy as e:
+        print(f"EXCEL BUSY: {e}")
+        sys.exit(4)
     except EngineUnavailable as e:
         print(f"NO RECALCULATION ENGINE: {e}\nMark Probe and Prove as UNKNOWN in the ledger and report.")
         sys.exit(3)
