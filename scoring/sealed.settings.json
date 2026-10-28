@@ -1,23 +1,23 @@
 {
   "permissions": {
     "deny": [
-      "Read(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED/**)",
+      "Read(//ABSOLUTE/PATH/TO/reverse-engineer-sheets-SEALED/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets-SEALED/**)",
       "Read(~/.claude/projects/**)",
       "Read(~/.claude/plans/**)",
       "Read(~/.claude/file-history/**)",
       "Read(~/.claude/todos/**)",
       "Read(~/.claude/history.jsonl)",
-      "Read(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.git/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/sheetre/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/tests/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.claude/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/samples/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/scoring/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.venv/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/docs/**)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/requirements.txt)",
-      "Edit(//Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/pytest.ini)"
+      "Read(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/.git/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/sheetre/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/tests/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/.claude/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/samples/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/scoring/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/.venv/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/docs/**)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/requirements.txt)",
+      "Edit(//ABSOLUTE/PATH/TO/reverse-engineer-sheets/pytest.ini)"
     ]
   },
   "sandbox": {
@@ -25,24 +25,24 @@
     "allowUnsandboxedCommands": false,
     "filesystem": {
       "denyRead": [
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets-SEALED",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets-SEALED",
         "~/.claude/projects",
         "~/.claude/plans",
         "~/.claude/file-history",
         "~/.claude/todos",
         "~/.claude/history.jsonl",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.git"
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/.git"
       ],
       "denyWrite": [
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/sheetre",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/tests",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.claude",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/samples",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/scoring",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/.venv",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/docs",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/requirements.txt",
-        "/Users/divyaanshkharbanda/Desktop/claude-playground/reverse-engineer-sheets/pytest.ini"
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/sheetre",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/tests",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/.claude",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/samples",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/scoring",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/.venv",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/docs",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/requirements.txt",
+        "/ABSOLUTE/PATH/TO/reverse-engineer-sheets/pytest.ini"
       ]
     },
     "network": {
