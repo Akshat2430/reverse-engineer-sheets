@@ -375,24 +375,136 @@ class ExcelEngine:
 
 
 class LibreOfficeEngine:
-    """Fallback when Excel is missing. Detection only for now; the UNO recalculation bridge is
-    built and tested in Phase 4 once LibreOffice is installed. Until then this raises
-    EngineUnavailable so the skill marks Probe/Prove as UNKNOWN instead of guessing."""
+    """Fallback when Excel is missing. Starts a private headless LibreOffice that runs
+    sheetre/lo_worker.py as a Python macro and serves set/calc/get over a Unix socket.
+    Results are marked engine=libreoffice: no macros, external links never updated, and some
+    functions differ from Excel."""
     name = "libreoffice"
 
+    def __init__(self, timeout=180):
+        self.timeout = timeout
+        self.proc = self.sock = self.f = None
+        self.info = {}
+
     @staticmethod
-    def detect():
+    def _soffice():
         for p in ("/Applications/LibreOffice.app/Contents/MacOS/soffice", shutil.which("soffice") or "",
-                  r"C:\Program Files\LibreOffice\program\soffice.exe"):
+                  r"C:\Program Files\LibreOffice\program\soffice.exe", "/usr/lib/libreoffice/program/soffice"):
             if p and Path(p).exists():
-                return True, p
-        return False, "LibreOffice (soffice) not found"
+                return p
+        return None
+
+    @classmethod
+    def detect(cls):
+        p = cls._soffice()
+        return (True, p) if p else (False, "LibreOffice (soffice) not found")
+
+    def _call(self, cmd, timeout=None, **args):
+        import json
+        self.sock.settimeout(timeout or self.timeout)
+        try:
+            self.f.write((json.dumps({"cmd": cmd, "args": args}, default=str) + "\n").encode())
+            self.f.flush()
+            line = self.f.readline()
+        except OSError as e:
+            self.stop()
+            raise EngineBlocked(f"LibreOffice did not answer '{cmd}': {e}")
+        if not line:
+            self.stop()
+            raise EngineError(f"LibreOffice worker closed the connection during '{cmd}'")
+        res = json.loads(line)
+        if not res["ok"]:
+            raise EngineError(f"LibreOffice '{cmd}' failed: {res['error']}")
+        return res["result"]
 
     def start(self):
-        ok, where = self.detect()
-        if not ok:
-            raise EngineUnavailable(where)
-        raise EngineUnavailable(f"LibreOffice found at {where}, but the LibreOffice backend is not implemented yet")
+        import socket
+        import tempfile
+        import time
+        soffice = self._soffice()
+        if not soffice:
+            raise EngineUnavailable("LibreOffice (soffice) not found")
+        profile = Path(tempfile.mkdtemp(prefix="sheetre-lo-"))
+        scripts = profile / "user" / "Scripts" / "python"
+        scripts.mkdir(parents=True)
+        shutil.copy(Path(__file__).with_name("lo_worker.py"), scripts / "sheetre_worker.py")
+        sock_path = str(profile / "w.sock")
+        env = dict(os.environ, SHEETRE_LO_SOCKET=sock_path)
+        url = "vnd.sun.star.script:sheetre_worker.py$serve?language=Python&location=user"
+        self.proc = subprocess.Popen([soffice, "--headless", "--invisible", "--norestore", "--nologo", "--nodefault",
+                                      f"-env:UserInstallation={profile.as_uri()}", url],
+                                     env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        for _ in range(240):
+            if os.path.exists(sock_path):
+                break
+            if self.proc.poll() is not None:
+                raise EngineUnavailable(f"LibreOffice exited before its worker started (code {self.proc.returncode})")
+            time.sleep(0.25)
+        else:
+            self.stop()
+            raise EngineUnavailable("LibreOffice started but its worker never opened a socket (macro blocked?)")
+        self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        self.sock.connect(sock_path)
+        self.f = self.sock.makefile("rwb")
+        self._call("hello", timeout=30)
+        ver = subprocess.run([soffice, "--version"], capture_output=True, text=True).stdout.strip()
+        self.info = dict(engine="libreoffice", version=ver, locale=system_locale(),
+                         caveats="no macros; external links not updated; some functions differ from Excel")
+        return self
+
+    def open(self, path, work_dir):
+        work_dir = Path(work_dir)
+        work_dir.mkdir(parents=True, exist_ok=True)
+        n = len(list(work_dir.glob("engine_*")))
+        dst = work_dir / f"engine_{n}_{safe_name(Path(path).name)}"
+        shutil.copy(path, dst)
+        calc = Package(dst).workbook()["calc"]
+        iterate = dict(on=calc.get("iterate") in ("1", "true"), count=int(calc.get("iterateCount", 100)),
+                       delta=float(calc.get("iterateDelta", 0.001)))
+        self._call("open", timeout=240, path=str(dst.resolve()), iterate=iterate)
+        self.info["iteration"] = iterate
+        return Book(self, dst.resolve(), path)
+
+    def set(self, book, values):
+        import datetime as dt
+        enc = {k: ({"date": (v if isinstance(v, dt.datetime) else dt.datetime(v.year, v.month, v.day)).isoformat()}
+                   if isinstance(v, (dt.date, dt.datetime)) else v) for k, v in values.items()}
+        self._call("set", book=book.path, values=enc)
+
+    def calc(self, book, full=False):
+        self._call("calc", book=book.path)
+
+    def get(self, book, cells):
+        return self._call("get", book=book.path, cells=list(cells))
+
+    def run_macro(self, book, name, *args):
+        raise EngineError("macros are not run on the LibreOffice engine")
+
+    def close(self, book):
+        try:
+            self._call("close", book=book.path)
+        except EngineError:
+            pass
+
+    def stop(self):
+        try:
+            if self.f is not None:
+                self.f.write(b'{"cmd": "quit"}\n')
+                self.f.flush()
+        except Exception:
+            pass
+        for x in (self.f, self.sock):
+            try:
+                x and x.close()
+            except Exception:
+                pass
+        self.f = self.sock = None
+        if self.proc is not None:
+            try:
+                self.proc.wait(15)
+            except Exception:
+                self.proc.kill()
+        self.proc = None
 
 
 class BridgeEngine:
@@ -491,7 +603,7 @@ def get_engine(prefer=None, timeout=120):
         if cls is BridgeEngine and not cls.detect()[0]:
             continue
         try:
-            eng = cls(timeout=timeout) if cls is ExcelEngine else cls()
+            eng = cls(timeout=timeout) if cls in (ExcelEngine, LibreOfficeEngine) else cls()
             return eng.start()
         except EngineUnavailable as e:
             reasons.append(f"{cls.name}: {e}")

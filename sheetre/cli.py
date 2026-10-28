@@ -3,10 +3,10 @@
     python -m sheetre.cli init <workbook>          -> prints the run folder (copies the file into it)
     python -m sheetre.cli inventory <run>
     python -m sheetre.cli map <run>
-    python -m sheetre.cli probe <run> [--cap 10000]
+    python -m sheetre.cli probe <run> [--coverage standard|exhaustive] [--cap N]
     python -m sheetre.cli try <run> --set "Sheet!A1=5" [--set ...] [--get "Sheet!B2"]
     python -m sheetre.cli ledger-check <run>
-    python -m sheetre.cli prove <run> [--n 1000] [--seed 1]
+    python -m sheetre.cli prove <run> [--n 300] [--seed 1]
     python -m sheetre.cli report <run>
     python -m sheetre.cli status <run>
     python -m sheetre.cli engine-check
@@ -86,7 +86,7 @@ def cmd_probe(a):
     meta = _run_json(a.run)
     eng = _engine(a)
     try:
-        s = probe.run(a.run, eng, meta["work_file"], cap=a.cap)
+        s = probe.run(a.run, eng, meta["work_file"], cap=a.cap, coverage=a.coverage)
     finally:
         eng.stop()
     print(json.dumps({k: s[k] for k in ("runs", "planned", "cap_hit", "nondeterministic_outputs",
@@ -224,9 +224,10 @@ def main(argv=None):
     for name, fn in (("inventory", cmd_inventory), ("map", cmd_map), ("ledger-check", cmd_ledger_check),
                      ("report", cmd_report), ("status", cmd_status)):
         s = sub.add_parser(name); s.add_argument("run"); s.set_defaults(fn=fn)
-    s = sub.add_parser("probe"); s.add_argument("run"); s.add_argument("--cap", type=int, default=10000)
+    s = sub.add_parser("probe"); s.add_argument("run"); s.add_argument("--cap", type=int, default=None)
+    s.add_argument("--coverage", choices=["standard", "exhaustive"], default="standard")
     s.add_argument("--engine", choices=["excel", "libreoffice"]); s.set_defaults(fn=cmd_probe)
-    s = sub.add_parser("prove"); s.add_argument("run"); s.add_argument("--n", type=int, default=1000)
+    s = sub.add_parser("prove"); s.add_argument("run"); s.add_argument("--n", type=int, default=300)
     s.add_argument("--seed", type=int, default=1); s.add_argument("--tol", type=float, default=0.005)
     s.add_argument("--engine", choices=["excel", "libreoffice"]); s.set_defaults(fn=cmd_prove)
     s = sub.add_parser("try"); s.add_argument("run"); s.add_argument("--set", action="append", metavar="Sheet!A1=value")

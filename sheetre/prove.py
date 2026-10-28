@@ -21,6 +21,7 @@ from pathlib import Path
 
 from . import refs as R
 from .engine import EngineError
+from .probe import has_error
 from .excelfn import XLError
 
 # Excel keeps 15 significant digits: differences below ~1e-14 of the value are float noise, not logic
@@ -203,6 +204,8 @@ def run(run_dir, engine, work_file, n=200, seed=1, tol=0.005, log=print):
     try:
         engine.calc(book, full=True)
         prev = {}
+        iterative = bool(engine.info.get("iteration", {}).get("on"))
+        resets = 0
         for case in cases:
             ch = case["changes"]
             if case["source"] == "excel":
@@ -212,6 +215,12 @@ def run(run_dir, engine, work_file, n=200, seed=1, tol=0.005, log=print):
                 xl = engine.get(book, outputs)
                 prev = ch
                 day = today
+                if iterative and has_error(xl.values()):
+                    # errors stick inside circular chains: start the next case from a fresh copy
+                    engine.close(book)
+                    book = engine.open(work_file, run_dir / "work")
+                    engine.calc(book, full=True)
+                    prev, resets = {}, resets + 1
             else:
                 xl, day = case["excel"], probe_day
             inputs = {**base, **ch}
@@ -265,6 +274,7 @@ def run(run_dir, engine, work_file, n=200, seed=1, tol=0.005, log=print):
         rounding_only=sorted(rounding_only),
         failing_input_blocks={b: dict(fail=block_fail[b], changed=block_seen[b]) for b in block_fail},
         case_kinds=dict(Counter(c["kind"].split(":")[0] for c in cases)),
+        resets_after_circular_errors=resets,
     )
     _write(run_dir / "proof_runs.csv", case_rows, ["case_id", "kind", "changed_inputs", "outputs_checked", "failures", "model_error"])
     _write(run_dir / "proof_failures.csv", fail_rows, ["case_id", "kind", "output", "excel", "model", "diff", "rounding_only"])

@@ -1,6 +1,8 @@
 """Stage 3: Probe. Recalculate the original with one input changed at a time.
 
-Variants for EVERY true input cell (sweeps on the first 3 cells of each block):
+Coverage "standard" (default): thresholds on every true input cell, other variants on sampled cells
+(first/middle/last/one more; every cell of blocks with 8 or fewer), cap 3,000. Coverage "exhaustive":
+every variant on every cell, cap 10,000. Sweeps run on the first 3 cells of each block. Variants:
   numbers: zero, blank, negative, x10, each downstream threshold T-1 / T / T+1, and a sweep
   text:    blank, other values seen in the same block, value + trailing space
   dates:   blank, +-31 days, +92 days
@@ -62,6 +64,21 @@ def _dv_lists(inventory, graph):
     return out
 
 
+def per_cell_scale(blk):
+    """Small or mixed-scale blocks (assumption lists) hold different parameters, not one series."""
+    if blk.get("cells", 0) <= 8:
+        return True
+    lo, hi = abs(blk.get("min", 0) or 0), abs(blk.get("max", 0) or 0)
+    return lo > 0 and hi / lo > 1000
+
+
+ERROR_STRINGS = {"#N/A", "#VALUE!", "#REF!", "#DIV/0!", "#NUM!", "#NAME?", "#NULL!", "#SPILL!", "#CALC!"}
+
+
+def has_error(values):
+    return any(isinstance(v, str) and (v in ERROR_STRINGS or v.startswith("Err:")) for v in values)
+
+
 def plausible_thresholds(blk):
     """Comparison literals downstream of a block that are on the block's own scale."""
     lo, hi = blk.get("min"), blk.get("max")
@@ -77,10 +94,27 @@ def plausible_thresholds(blk):
     return out
 
 
-def plan(graph, inventory, cap=10000, sweep_points=12):
-    """List of (input_cell, variant, value) single-change runs, every true input cell covered.
+COVERAGE = {
+    # standard: every threshold on every cell; other variants on sampled cells (all cells of small blocks)
+    "standard": dict(cap=3000, sample_all_basic=False),
+    # exhaustive: every variant on every cell (for the final published run)
+    "exhaustive": dict(cap=10000, sample_all_basic=True),
+}
+
+
+def _sampled(cells):
+    """First, middle, last and one more for big blocks; every cell for blocks of 8 or fewer."""
+    if len(cells) <= 8:
+        return set(cells)
+    return {cells[0], cells[len(cells) // 2], cells[-1], cells[len(cells) // 3]}
+
+
+def plan(graph, inventory, cap=None, sweep_points=12, coverage="standard"):
+    """List of (input_cell, variant, value) single-change runs.
     Ordered by value so a cap drops the least useful runs first: dropdowns, thresholds,
     basic variants, sweeps."""
+    cfg = COVERAGE[coverage]
+    cap = cap or cfg["cap"]
     nodes = graph["nodes"]
     dv = _dv_lists(inventory, graph)
     buckets = {0: [], 1: [], 2: [], 3: []}
@@ -102,23 +136,29 @@ def plan(graph, inventory, cap=10000, sweep_points=12):
                  for r in range(blk["first_row"], blk["last_row"] + 1)]
         cells = [c for c in cells if c in nodes]
         thresholds = plausible_thresholds(blk)
+        basic = set(cells) if cfg["sample_all_basic"] else _sampled(cells)
         for i, c in enumerate(cells):
             base = nodes[c]["value"]
             d = _date(base)
             if _num(base):
-                for variant, v in (("zero", 0), ("blank", None), ("negative", -base), ("x10", base * 10)):
-                    if v != base:
-                        add(2, c, variant, v)
+                if c in basic:
+                    for variant, v in (("zero", 0), ("blank", None), ("negative", -base), ("x10", base * 10)):
+                        if v != base:
+                            add(2, c, variant, v)
                 for t in thresholds:
                     step = 1 if blk.get("integers", True) and abs(t) >= 2 else max(abs(t) * 0.01, 1e-6)
                     for variant, v in (("threshold-1", t - step), ("threshold", t), ("threshold+1", t + step)):
                         add(1, c, f"{variant}({t:g})", v)
                 lo, hi = blk.get("min", base), blk.get("max", base)
+                if per_cell_scale(blk) and base:
+                    lo, hi = sorted((base * 0.5, base * 1.5))     # distinct parameters: stay near this cell's value
                 if i < 3 and hi > lo:
                     pts = sorted({lo + (hi - lo) * k / (sweep_points - 1) for k in range(sweep_points)} |
                                  {t for t in blk.get("thresholds", []) if lo <= t <= hi})
                     for v in pts:
                         add(3, c, "sweep", round(v, 6) if not blk.get("integers") else round(v))
+            elif c not in basic:
+                continue
             elif d is not None:
                 add(2, c, "blank", None)
                 for days in (-31, 31, 92):
@@ -135,12 +175,12 @@ def plan(graph, inventory, cap=10000, sweep_points=12):
     return runs[:cap], truncated, len(runs)
 
 
-def run(run_dir, engine, work_file, cap=10000, log=print):
+def run(run_dir, engine, work_file, cap=None, coverage="standard", log=print):
     run_dir = Path(run_dir)
     graph = json.loads((run_dir / "graph.json").read_text())
     inventory = json.loads((run_dir / "inventory.json").read_text())
     outputs = graph["outputs"]
-    runs, truncated, planned = plan(graph, inventory, cap=cap)
+    runs, truncated, planned = plan(graph, inventory, cap=cap, coverage=coverage)
     book = engine.open(work_file, run_dir / "work")
     nodes = graph["nodes"]
     try:
@@ -155,6 +195,8 @@ def run(run_dir, engine, work_file, cap=10000, log=print):
         sweeps = defaultdict(list)
         thresh_pts = defaultdict(dict)
         restore = {}
+        iterative = bool(engine.info.get("iteration", {}).get("on"))
+        resets = 0
         log(f"probe: {len(runs)} runs planned ({planned} before cap), {len(outputs)} outputs")
         moves_f = open(run_dir / "probe_moves.jsonl", "w")
         for i, (cell, variant, value) in enumerate(runs, start=1):
@@ -168,6 +210,13 @@ def run(run_dir, engine, work_file, cap=10000, log=print):
                 run_rows.append(dict(run_id=i, input=cell, variant=variant, value=value, moved=0, error=str(e)[:200]))
                 raise
             restore = {cell: nodes[cell]["value"]}
+            if iterative and has_error(after.values()):
+                # an error inside a circular chain sticks in Excel even after the input is restored:
+                # reopen a fresh copy so later runs are not poisoned
+                engine.close(book)
+                book = engine.open(work_file, run_dir / "work")
+                engine.calc(book, full=True)
+                restore, resets = {}, resets + 1
             missing = [o for o in outputs if o not in after]
             if missing:
                 raise EngineError(f"run {i} ({cell} {variant}={value!r}): engine returned no value for {missing[:5]}")
@@ -199,8 +248,10 @@ def run(run_dir, engine, work_file, cap=10000, log=print):
     volatile = [g for g in inventory.get("flags", {}).get("volatile", {}).get("items", [])
                 if set(g.get("functions", [])) & {"TODAY", "NOW", "RAND", "RANDBETWEEN", "RANDARRAY"}]
     summary = dict(
-        engine=engine.info, runs=len(runs), planned=planned, cap=cap, cap_hit=truncated,
+        engine=engine.info, coverage=coverage, runs=len(runs), planned=planned, cap=cap or COVERAGE[coverage]["cap"],
+        cap_hit=truncated,
         probe_date=dt.date.today().isoformat(), base_outputs={o: _enc(v) for o, v in base1.items()},
+        resets_after_circular_errors=resets,
         nondeterministic_outputs=nondet,
         date_or_random_functions=[dict(range=g.get("range"), functions=g.get("functions")) for g in volatile],
         note_on_dates=("TODAY()/NOW() return the same value in both base runs on one day, so the twice-run check cannot "
