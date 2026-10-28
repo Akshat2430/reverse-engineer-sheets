@@ -125,9 +125,13 @@ def build(run):
 
     L += ["## Proof", ""]
     if proof:
-        L.append(f"The rebuild (`rebuild/model.py`) was run against the original recalculated in "
-                 f"{proof['engine'].get('engine')} on {proof['cases']} input sets: {proof['pass_rate']:.1%} matched on every "
-                 f"output, {proof['outputs_all_pass']}/{proof['outputs']} outputs never mismatched "
+        def pct(x):
+            return "n/a" if x is None else f"{x:.1%}"
+        L.append(f"The rebuild (`rebuild/model.py`) was checked against the original on {proof['cases']:,} input sets: "
+                 f"{proof.get('excel_cases', 0):,} random sets recalculated fresh in {proof['engine'].get('engine')} "
+                 f"({pct(proof.get('excel_pass_rate'))} matched) and every one of the {proof.get('replay_cases', 0):,} probe runs "
+                 f"replayed against Excel's recorded answers ({pct(proof.get('replay_pass_rate'))} matched). Overall "
+                 f"{proof['pass_rate']:.1%}; {proof['outputs_all_pass']}/{proof['outputs']} outputs never mismatched "
                  f"(tolerance {proof['tolerance']}).")
         if proof["outputs_failing"]:
             L.append("")
@@ -186,8 +190,9 @@ def _headline(path):
 
 def _proof_line(proof, probe):
     if proof:
-        return (f"> **Proof: {proof['pass_rate']:.1%} of {proof['cases']} input sets reproduced exactly** "
-                f"by the rebuild ({proof['outputs_all_pass']}/{proof['outputs']} outputs always matched).")
+        return (f"> **Proof: {proof['pass_rate']:.1%} of {proof['cases']:,} input sets reproduced exactly** by the rebuild "
+                f"({proof.get('excel_cases', 0):,} recalculated fresh in Excel, {proof.get('replay_cases', 0):,} probe runs replayed; "
+                f"{proof['outputs_all_pass']}/{proof['outputs']} outputs always matched).")
     if probe:
         return "> **Proof: not run.** The logic below was probed but the rebuild was not verified."
     return "> **Proof: UNKNOWN.** No recalculation engine was available; nothing below was verified by recalculation."

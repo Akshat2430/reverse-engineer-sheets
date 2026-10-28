@@ -1,10 +1,10 @@
 # Probe recipes
 
-`probe` runs these automatically on every cell of blocks with 8 cells or fewer, and on 4 sampled cells (first, middle, last, one random) of larger blocks. Each run changes one input, recalculates the copy in Excel and records every output that moved (`probes.csv`). The base case runs twice.
+`probe` runs these automatically on every true input cell (sweeps only on the first 3 cells of each block). Each run changes one input, recalculates the copy in Excel and records every output that moved (`probes.csv`). The base case runs twice. Every run's full Excel answer goes to `probe_moves.jsonl`, and `prove` replays all of them against the rebuild.
 
 | Input type | Variants |
 |---|---|
-| Number | zero, blank, negative, x10, every downstream comparison threshold T-1 / T / T+1 (on up to 3 sampled cells per block), and a 12-point sweep across the observed range |
+| Number | zero, blank, negative, x10, every downstream comparison threshold T-1 / T / T+1, and a 12-point sweep across the observed range |
 | Text | blank, value + trailing space, up to 3 other values seen in the same column |
 | Date | blank, -31, +31 and +92 days |
 | Dropdown cell | every value in its validation list |
@@ -16,7 +16,7 @@
 - `sweeps`: outputs that are non-monotonic as one input rises. Some ratios are naturally non-monotonic; check the formula before calling it a problem.
 - `nondeterministic_outputs`: differ between two identical base runs (RAND and the like).
 - `date_or_random_functions`: TODAY()/NOW() cells. Both base runs fall on the same day, so they look deterministic. Treat them as date-dependent. Prove pins `today`.
-- `inputs_not_probed`: true inputs the sampler skipped (large blocks are sampled, blocks of 8 cells or fewer are probed in full). Absent from `sensitivity` does not mean unimportant; use `try` on any that matter.
+- `inputs_not_probed`: true inputs with no probe run. This should be empty unless the run cap (10,000) was hit; if it isn't, use `try` on any that matter.
 - `inputs_with_no_effect`: sampled inputs that moved nothing. Either dead inputs, or effects that only show in combination with another input's value.
 - `recalculated_differs_from_cached`: the saved numbers are not what the file computes today. Stale values, volatile functions, or a manual-calculation workbook.
 - `sensitivity`: largest output moves per input.

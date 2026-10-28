@@ -1,17 +1,17 @@
 """Stage 3: Probe. Recalculate the original with one input changed at a time.
 
-Variants per sampled input cell:
+Variants for EVERY true input cell (sweeps on the first 3 cells of each block):
   numbers: zero, blank, negative, x10, each downstream threshold T-1 / T / T+1, and a sweep
   text:    blank, other values seen in the same block, value + trailing space
   dates:   blank, +-31 days, +92 days
   dropdown cells (data validation lists): every allowed value
 The base case runs twice; any output that differs between the two is non-deterministic.
-Writes probes.csv (moved outputs only), probe_runs.csv (every run) and probe_summary.json.
+Writes probes.csv (moved outputs only), probe_runs.csv (every run), probe_moves.jsonl (Excel's full
+answer per run, which prove replays against the rebuild) and probe_summary.json.
 """
 import csv
 import datetime as dt
 import json
-import random
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -77,68 +77,65 @@ def plausible_thresholds(blk):
     return out
 
 
-def plan(graph, inventory, cap=2000, sweep_points=12):
-    """List of (input_cell, variant, value) single-change runs."""
-    rng = random.Random(SEED)
+def plan(graph, inventory, cap=10000, sweep_points=12):
+    """List of (input_cell, variant, value) single-change runs, every true input cell covered.
+    Ordered by value so a cap drops the least useful runs first: dropdowns, thresholds,
+    basic variants, sweeps."""
     nodes = graph["nodes"]
     dv = _dv_lists(inventory, graph)
-    runs, seen = [], set()
+    buckets = {0: [], 1: [], 2: [], 3: []}
+    seen = set()
 
-    def add(cell, variant, value):
+    def add(prio, cell, variant, value):
         key = (cell, variant, json.dumps(value, default=str))
         if key not in seen:
             seen.add(key)
-            runs.append((cell, variant, value))
+            buckets[prio].append((cell, variant, value))
 
     for cell, values in dv.items():
         for v in values:
             if v != nodes[cell]["value"]:
-                add(cell, f"dropdown={v}", v)
+                add(0, cell, f"dropdown={v}", v)
 
     for blk in graph["input_blocks"]:
         cells = [R.cell_key(blk["sheet"], R.parse_cell(f"{blk['col']}1")[0], r)
                  for r in range(blk["first_row"], blk["last_row"] + 1)]
         cells = [c for c in cells if c in nodes]
-        if not cells:
-            continue
-        # small blocks (assumption lists, rate tables) are often distinct parameters: probe every cell
-        sample = cells if len(cells) <= 8 else [cells[0], cells[len(cells) // 2], cells[-1], rng.choice(cells[1:-1])]
-        for i, c in enumerate(dict.fromkeys(sample)):
+        thresholds = plausible_thresholds(blk)
+        for i, c in enumerate(cells):
             base = nodes[c]["value"]
             d = _date(base)
             if _num(base):
                 for variant, v in (("zero", 0), ("blank", None), ("negative", -base), ("x10", base * 10)):
                     if v != base:
-                        add(c, variant, v)
+                        add(2, c, variant, v)
+                for t in thresholds:
+                    step = 1 if blk.get("integers", True) and abs(t) >= 2 else max(abs(t) * 0.01, 1e-6)
+                    for variant, v in (("threshold-1", t - step), ("threshold", t), ("threshold+1", t + step)):
+                        add(1, c, f"{variant}({t:g})", v)
                 lo, hi = blk.get("min", base), blk.get("max", base)
-                if i < 3:
-                    for t in plausible_thresholds(blk):
-                        step = 1 if blk.get("integers", True) and abs(t) >= 2 else max(abs(t) * 0.01, 1e-6)
-                        for variant, v in (("threshold-1", t - step), ("threshold", t), ("threshold+1", t + step)):
-                            add(c, f"{variant}({t:g})", v)
-                if i == 0:
-                    if hi > lo:
-                        pts = sorted({lo + (hi - lo) * k / (sweep_points - 1) for k in range(sweep_points)} |
-                                     {t for t in blk.get("thresholds", []) if lo <= t <= hi})
-                        for v in pts:
-                            add(c, "sweep", round(v, 6) if not blk.get("integers") else round(v))
+                if i < 3 and hi > lo:
+                    pts = sorted({lo + (hi - lo) * k / (sweep_points - 1) for k in range(sweep_points)} |
+                                 {t for t in blk.get("thresholds", []) if lo <= t <= hi})
+                    for v in pts:
+                        add(3, c, "sweep", round(v, 6) if not blk.get("integers") else round(v))
             elif d is not None:
-                add(c, "blank", None)
+                add(2, c, "blank", None)
                 for days in (-31, 31, 92):
-                    add(c, f"date{days:+d}d", {"date": (d + dt.timedelta(days=days)).isoformat()})
+                    add(2, c, f"date{days:+d}d", {"date": (d + dt.timedelta(days=days)).isoformat()})
             elif isinstance(base, bool):
-                add(c, "flip", not base)
+                add(2, c, "flip", not base)
             elif isinstance(base, str):
-                add(c, "blank", None)
-                add(c, "trailing-space", base + " ")
-                others = [x for x in blk.get("distinct", []) if x != base][:3]
-                for o in others:
-                    add(c, "swap", o)
+                add(2, c, "blank", None)
+                add(2, c, "trailing-space", base + " ")
+                for o in [x for x in blk.get("distinct", []) if x != base][:3]:
+                    add(2, c, "swap", o)
+    runs = buckets[0] + buckets[1] + buckets[2] + buckets[3]
     truncated = len(runs) > cap
     return runs[:cap], truncated, len(runs)
 
 
-def run(run_dir, engine, work_file, cap=2000, log=print):
+def run(run_dir, engine, work_file, cap=10000, log=print):
     run_dir = Path(run_dir)
     graph = json.loads((run_dir / "graph.json").read_text())
     inventory = json.loads((run_dir / "inventory.json").read_text())
@@ -159,6 +156,7 @@ def run(run_dir, engine, work_file, cap=2000, log=print):
         thresh_pts = defaultdict(dict)
         restore = {}
         log(f"probe: {len(runs)} runs planned ({planned} before cap), {len(outputs)} outputs")
+        moves_f = open(run_dir / "probe_moves.jsonl", "w")
         for i, (cell, variant, value) in enumerate(runs, start=1):
             change = dict(restore)
             change[cell] = value
@@ -181,6 +179,8 @@ def run(run_dir, engine, work_file, cap=2000, log=print):
                 moved_rows.append(dict(run_id=i, input=cell, variant=variant, value=_show(value), output=o,
                                        before=b, after=a, delta=delta))
                 moved_by_input[cell][o] = max(moved_by_input[cell][o], abs(delta) if delta != "" else float("inf"))
+            moves_f.write(json.dumps(dict(run_id=i, input=cell, variant=variant, value=value,
+                                          moved={o: _enc(after[o]) for o in moved}), default=str) + "\n")
             if variant == "sweep":
                 sweeps[cell].append((value, {o: after[o] for o in outputs}))
             m = re.match(r"threshold([+-]1)?\((.+)\)$", variant)
@@ -189,6 +189,7 @@ def run(run_dir, engine, work_file, cap=2000, log=print):
             if i % 100 == 0:
                 log(f"  {i}/{len(runs)}")
         engine.set(book, restore)
+        moves_f.close()
     finally:
         engine.close(book)
 
@@ -199,6 +200,7 @@ def run(run_dir, engine, work_file, cap=2000, log=print):
                 if set(g.get("functions", [])) & {"TODAY", "NOW", "RAND", "RANDBETWEEN", "RANDARRAY"}]
     summary = dict(
         engine=engine.info, runs=len(runs), planned=planned, cap=cap, cap_hit=truncated,
+        probe_date=dt.date.today().isoformat(), base_outputs={o: _enc(v) for o, v in base1.items()},
         nondeterministic_outputs=nondet,
         date_or_random_functions=[dict(range=g.get("range"), functions=g.get("functions")) for g in volatile],
         note_on_dates=("TODAY()/NOW() return the same value in both base runs on one day, so the twice-run check cannot "
@@ -212,6 +214,12 @@ def run(run_dir, engine, work_file, cap=2000, log=print):
     )
     (run_dir / "probe_summary.json").write_text(json.dumps(summary, indent=1, default=str))
     return summary
+
+
+def _enc(v):
+    if isinstance(v, (dt.datetime, dt.date)):
+        return {"date": (v if isinstance(v, dt.datetime) else dt.datetime(v.year, v.month, v.day)).isoformat()}
+    return v
 
 
 def _cached(v):

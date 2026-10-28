@@ -31,10 +31,10 @@ Run from the repo root. `PY` is `.venv/bin/python` (macOS/Linux) or `.venv\Scrip
 | `$PY -m sheetre.cli init "<file>"` | Copies the file into `runs/<timestamp>_<name>/` and prints that folder (RUN) |
 | `$PY -m sheetre.cli inventory RUN` | `inventory.json`: sheets and states, names, links, VBA (`RUN/vba/`), calc settings, flags |
 | `$PY -m sheetre.cli map RUN` | `graph.json` and `map.md`: dependency graph, outputs, true inputs, lookups, gaps, cycles |
-| `$PY -m sheetre.cli probe RUN` | Recalculates the copy in Excel with one input changed at a time: `probes.csv`, `probe_summary.json` |
+| `$PY -m sheetre.cli probe RUN` | Recalculates the copy in Excel with one input changed at a time, for every true input cell: `probes.csv`, `probe_summary.json`, `probe_moves.jsonl` |
 | `$PY -m sheetre.cli try RUN --set "Sheet!A1=5" --get "Sheet!B2"` | One targeted experiment; cite it as `try N` |
 | `$PY -m sheetre.cli ledger-check RUN` | Validates `ledger.csv` and writes `ledger.md` |
-| `$PY -m sheetre.cli prove RUN [--n 200]` | Runs N input sets through Excel and `rebuild/model.py`, compares every output |
+| `$PY -m sheetre.cli prove RUN [--n 1000]` | Runs N random input sets through Excel and `rebuild/model.py`, replays every probe run against the rebuild, compares every output |
 | `$PY -m sheetre.cli report RUN` | Builds `REPORT.md` and `REPORT.html` from the run files |
 
 Exit code 3 from probe, try or prove means no recalculation engine. Run `engine-check` once to see why. If Excel is installed but this session can't drive it (common inside a sandbox), ask the user to run `.venv/bin/python -m sheetre.bridge` in a normal terminal; the engine uses the bridge automatically. If there's still no engine, continue with inventory, map and ledger, and mark anything that needed recalculation as UNKNOWN.
@@ -48,10 +48,10 @@ Exit code 3 from probe, try or prove means no recalculation engine. Run `engine-
 5. **Rebuild** (only after the ledger exists).
    - `RUN/rebuild/model.py` defines `run(inputs, today) -> dict`. `inputs` maps `"Sheet!A1"` to its value for every true input in `graph.json`. Return every output cell in `graph.json["outputs"]`. Use `sheetre.excelfn` for Excel-exact behaviour: `Cells`, `vlookup`/`match` (exact Excel search, including unsorted approximate match), `sumif`, `countif`, `xl_round`, `num`, `n`, `value`, `datevalue` (locale), `iterate`, `XLError`. Make the code readable: one function per stage of the logic, with comments that cite cells.
    - `RUN/rebuild/build_clean.py` writes `RUN/rebuild/model_clean.xlsx`: the same logic laid out readably, with one assumptions sheet, labelled steps and a notes sheet listing the ledger's problems. Run it.
-6. **Prove.** Run `prove`. Read `proof_report.md`. For every mismatch, find out why, add or change a ledger row (a mismatch means you misunderstood something), fix `model.py` and prove again. Stop after 3 rebuild rounds. Log each round in `RUN/rebuild/ROUNDS.md` (what failed, what you learned, what changed). Unexplained mismatches are listed as UNKNOWN, never hidden.
+6. **Prove.** Run `prove` (default N=1,000). Read `proof_report.md`: it reports fresh Excel cases and replayed probe runs separately. For every mismatch, find out why, add or change a ledger row (a mismatch means you misunderstood something), fix `model.py` and prove again. Stop after 3 rebuild rounds. Log each round in `RUN/rebuild/ROUNDS.md` (what failed, what you learned, what changed). Unexplained mismatches are listed as UNKNOWN, never hidden.
 7. **Narrative and report.** Write `RUN/narrative.md` with three sections: `## Outputs` (each output and what it means), `## How it works` (the logic in plain English, step by step, citing cells) and `## What would worry me` (the 3 to 5 findings that matter most, by ledger id). Then run `report`. The report leads with outputs and logic, then the ledger, then the unknowns as a meeting agenda, then the proof.
 8. **Answer the user** briefly: the proof result, the top problems (by ledger id), how many open questions are on the agenda, and the path to `REPORT.html`.
 
 ## Time and scale
 
-Probe on a typical workbook runs 300 to 1,500 recalculations, about 0.5s each. Prove with N=200 takes 2 to 5 minutes. If Excel shows a dialog, the engine stops with `EngineBlocked`. Ask the user to close the dialog, then rerun that stage.
+Coverage is exhaustive by design, so give it time. Probe covers every true input cell: a few hundred to several thousand recalculations at about 0.5s each, so 5 to 60 minutes. Run it in the background and read the inventory and map while it works. Prove recalculates 1,000 random input sets (10 to 20 minutes) and replays every probe run against the rebuild in seconds. Don't lower `--n` to save time: the proof is the point. If Excel shows a dialog, the engine stops with `EngineBlocked`. Ask the user to close the dialog, then rerun that stage.
