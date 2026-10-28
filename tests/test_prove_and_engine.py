@@ -21,6 +21,8 @@ def test_compare_rules():
     assert prove.compare(None, "", 0.005)[0]
     assert not prove.compare(None, 0, 0.005)[0]                # blank is not zero
     assert prove.compare(dt.datetime(2027, 1, 1), 46388, 0.005)[0]
+    assert not prove.compare(0.5, 0.504, prove.TOL)[0]               # 0.4 points off a margin fails
+    assert prove.compare(11_000_000.0, 11_000_000.00007, prove.TOL)[0]  # convergence noise on a big total passes
 
 
 excel = pytest.mark.skipif(not ExcelEngine.detect()[0], reason="needs Microsoft Excel")

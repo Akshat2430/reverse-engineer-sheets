@@ -8,7 +8,8 @@ model.py contract:
 
 Cases: case 0 = the workbook's own saved inputs and N random input sets (default 1,000), all
 recalculated fresh in Excel; plus EVERY probe run, replayed against Excel's recorded answer from
-probe_moves.jsonl (no recalculation needed). Default tolerance 0.005 on stored values.
+probe_moves.jsonl (no recalculation needed). A value passes within 1e-6, or within 1e-9 of its size
+(large money totals, iterative convergence).
 """
 import csv
 import datetime as dt
@@ -24,8 +25,10 @@ from .engine import EngineError
 from .probe import has_error
 from .excelfn import XLError
 
-# Excel keeps 15 significant digits: differences below ~1e-14 of the value are float noise, not logic
-PRECISION_FLOOR = 1e-13
+# 0.005 used to be the tolerance, but on a ratio that is half a percentage point and let a wrong
+# margin pass; 1e-6 catches that, and the relative 1e-9 keeps big totals and convergence noise passing
+TOL = 1e-6
+REL_TOL = 1e-9
 
 
 
@@ -68,7 +71,7 @@ def compare(excel, model, tol):
         d = abs(a - b)
         if d <= tol:
             return True, d, False
-        if d <= PRECISION_FLOOR * max(abs(a), abs(b)):    # beyond Excel's 15 significant digits
+        if d <= REL_TOL * max(abs(a), abs(b)):
             return True, d, False
         return False, d, round(a, 2) == round(b, 2)
     if a is None and b == 0 or b is None and a == 0:
@@ -184,7 +187,7 @@ def _parse_probe_value(text, base):
         return text
 
 
-def run(run_dir, engine, work_file, n=200, seed=1, tol=0.005, log=print):
+def run(run_dir, engine, work_file, n=200, seed=1, tol=TOL, log=print):
     run_dir = Path(run_dir)
     graph = json.loads((run_dir / "graph.json").read_text())
     model_path = run_dir / "rebuild" / "model.py"

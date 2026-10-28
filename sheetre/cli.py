@@ -108,7 +108,8 @@ def cmd_prove(a):
     meta = _run_json(a.run)
     eng = _engine(a)
     try:
-        s = prove.run(a.run, eng, meta["work_file"], n=a.n, seed=a.seed, tol=a.tol)
+        s = prove.run(a.run, eng, meta["work_file"], n=a.n, seed=a.seed,
+                       tol=prove.TOL if a.tol is None else a.tol)
     finally:
         eng.stop()
     print(json.dumps({k: s[k] for k in ("cases", "excel_cases", "replay_cases", "outputs", "pass_rate", "excel_pass_rate",
@@ -231,7 +232,7 @@ def main(argv=None):
     s.add_argument("--coverage", choices=["standard", "exhaustive"], default="standard")
     s.add_argument("--engine", choices=["excel", "libreoffice"]); s.set_defaults(fn=cmd_probe)
     s = sub.add_parser("prove"); s.add_argument("run"); s.add_argument("--n", type=int, default=300)
-    s.add_argument("--seed", type=int, default=1); s.add_argument("--tol", type=float, default=0.005)
+    s.add_argument("--seed", type=int, default=1); s.add_argument("--tol", type=float, default=None)
     s.add_argument("--engine", choices=["excel", "libreoffice"]); s.set_defaults(fn=cmd_prove)
     s = sub.add_parser("try"); s.add_argument("run"); s.add_argument("--set", action="append", metavar="Sheet!A1=value")
     s.add_argument("--get", action="append", metavar="Sheet!A1"); s.add_argument("--engine", choices=["excel", "libreoffice"])
